@@ -43,7 +43,7 @@
       },
       "therapist": {
         "eyebrow": "セラピスト紹介",
-        "title": ["施術を支える ", "確かな手。"],
+        "title": ["施術を支える ", "確かな", "手。"],
         "name": "ガーフィールド・マルコム",
         "role": "チーフセラピスト · ディープティシュー & トリガーポイント",
         "years": "施術歴 12年",
@@ -80,7 +80,7 @@
         }
       },
       "community": {
-        "title": ["体を急がせない", "初回セッション。"],
+        "title": ["体を急がせない", "\n", "初回", "セッション。"],
         "description": "初回は意図的にシンプルです。丁寧に話を聞き、無理のない範囲で施術し、何が助けになったのかを分かりやすくお伝えします。",
         "lists": {
           "freeAndOpenSource": {
@@ -174,99 +174,39 @@
       "description": "キングストンの施術を提供するリラクゼーション・スタジオです。体と心の回復を大切にしています。",
       "littleHelp": "応援しませんか？",
       "mainTeam": {
-        "title": "メインチーム",
-        "description": "施術と施術体験を支えるメンバーです。",
+        "title": "ケアチーム",
+        "description": "施術からご予約の細かな案内まで、落ち着いた時間を支える人と取り組みです。",
         "subTitle": {
-          "browser": "施術チーム",
-          "website": "ウェブサイト・ブランディング"
+          "browser": "施術",
+          "website": "スタジオサポート"
         },
         "members": {
           "browser": {
-            "mauro": {
-              "name": "Mauro B.",
-              "description": "クリエイター・メイン開発者",
-              "link": "https://cheff.dev/"
-            },
-            "jan": {
-              "name": "Jan Heres",
-              "description": "MacOSビルド担当・貢献者",
-              "link": "https://janheres.eu/"
-            },
-            "bryan": {
-              "name": "Bryan Galdámez",
-              "description": "テーマ機能の大貢献者",
-              "link": "https://josuegalre.netlify.app/"
-            },
-            "oscar": {
-              "name": "Oscar Gonzalez",
-              "description": "SRE・コード署名担当",
+            "garfield": {
+              "name": "Garfield Malcom",
+              "description": "ディープティシュー、トリガーポイント、回復を目的としたボディワークを担当するリードセラピスト。",
               "link": false
-            },
-            "daniel": {
-              "name": "Daniel García",
-              "description": "MacOS証明書・公証管理",
-              "link": false
-            },
-            "brhm": {
-              "name": "BrhmDev",
-              "description": "大きな貢献をしている開発者",
-              "link": "https://github.com/BrhmDev"
-            },
-            "kristijanribaric": {
-              "name": "Kristijan Ribaric",
-              "description": "スプリットビュー・ワークスペース担当",
-              "link": "https://github.com/kristijanribaric"
-            },
-            "larvey": {
-              "name": "Larvey",
-              "description": "AUR管理者",
-              "link": "https://github.com/LarveyOfficial/"
-            },
-            "studio": {
-              "name": "Studio Movie Girl",
-              "description": "グラデーションジェネレーターの貢献者",
-              "link": "https://github.com/neurokitti"
             }
           },
           "website": {
-            "taroj1205": {
-              "name": "Shintaro Jokagi",
-              "description": "コアウェブサイトアーキテクト、リファクタリング・技術強化担当",
-              "link": "https://github.com/taroj1205"
+            "care": {
+              "name": "クライアントケア",
+              "description": "ご予約のサポート、フォローアップ、来店しやすさを整える細かな対応。",
+              "link": false
             },
-            "jace": {
-              "name": "Jace",
-              "description": "ウェブサイトデザイン・ブランディング担当",
-              "link": "https://x.com/JaceThings"
-            },
-            "canoa": {
-              "name": "Canoa",
-              "description": "活発な貢献者・ウェブサイト管理",
-              "link": "https://thatcanoa.org/"
-            },
-            "adam": {
-              "name": "Adam",
-              "description": "ブランディング・デザイン",
-              "link": "https://cybrneon.xyz/"
-            },
-            "n7itro": {
-              "name": "n7itro",
-              "description": "リリースノート執筆・貢献者",
-              "link": "https://github.com/n7itro"
-            },
-            "jafeth": {
-              "name": "Jafeth Garro",
-              "description": "ドキュメント執筆",
-              "link": "https://iamjafeth.com/"
+            "community": {
+              "name": "地域のパートナー",
+              "description": "紹介と信頼を通じてスタジオを支えてくださるお客様とウェルネス関係者。",
+              "link": false
             }
           }
         }
       },
       "contributors": {
-        "title": "コントリビューター",
-        "description": "スタジオ運営を支えてくださっている皆様です。",
-        "browser": "チーム",
-        "website": "ウェブサイト"
+        "title": "感謝",
+        "description": "Meditation Fieldsは、施術を紹介し、感想を寄せ、信頼を広げてくださる皆様に支えられています。",
+        "browser": "継続して通い、レビューや紹介をしてくださるお客様",
+        "website": "地域のウェルネスパートナーとスタジオを応援してくださる皆様"
       }
     },
     "donate": {

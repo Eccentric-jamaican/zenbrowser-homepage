@@ -23,52 +23,52 @@ const {
       </Description>
       <Button href={getLocalePath('/donate')} class="w-fit" isPrimary>{about.littleHelp}</Button>
     </div>
-    <div class="flex w-full flex-col gap-4">
+    <section class="flex w-full flex-col gap-6">
       <div class="text-4xl font-bold leading-none lg:text-5xl">{about.mainTeam.title}</div>
       <Description>
         {about.mainTeam.description}
       </Description>
-      <div class="flex flex-col gap-6">
+      <div class="grid gap-6 md:grid-cols-2">
         {
           Object.entries(about.mainTeam.members).map(([team, members]) => (
-            <div class="flex flex-col gap-2">
-              <div class="text-3xl font-semibold">
+            <article class="border-dark/10 flex flex-col gap-4 border-t pt-5">
+              <h2 class="font-serif text-3xl font-medium leading-tight">
                 {about.mainTeam.subTitle[team as keyof typeof about.mainTeam.subTitle]}
-              </div>
-              <ul class="flex flex-col gap-2">
+              </h2>
+              <ul class="flex flex-col gap-3">
                 {Object.entries(members).map(([_key, member]) => (
-                  <li class="text-sm">
-                    {member.link && typeof member.link === 'string' ? (
-                      <a href={member.link}>
-                        <strong class="zen-link font-bold">{member.name}</strong>
-                      </a>
-                    ) : (
-                      <strong class="font-bold">{member.name}</strong>
-                    )}
-                    <span class="opacity-80">: {member.description}</span>
+                  <li class="flex flex-col gap-1">
+                    <div class="text-base font-semibold">
+                      {member.link && typeof member.link === 'string' ? (
+                        <a href={member.link} class="zen-link">
+                          {member.name}
+                        </a>
+                      ) : (
+                        member.name
+                      )}
+                    </div>
+                    <p class="text-dark/70 text-sm leading-relaxed">{member.description}</p>
                   </li>
                 ))}
               </ul>
-            </div>
+            </article>
           ))
         }
       </div>
-    </div>
-    <div class="flex w-full flex-col gap-4">
+    </section>
+    <section class="flex w-full flex-col gap-4">
       <div class="text-4xl font-bold leading-none lg:text-5xl">{about.contributors.title}</div>
       <Description>
         {about.contributors.description}
       </Description>
-      <div class="flex w-fit flex-col gap-4">
-        <Description class="text-3xl font-semibold lg:text-4xl">
+      <div class="border-dark/10 grid gap-4 border-t pt-5 md:grid-cols-2">
+        <p class="font-serif text-2xl font-medium leading-tight">
           {about.contributors.browser}
-        </Description>
-      </div>
-      <div class="flex w-fit flex-col gap-4">
-        <Description class="text-3xl font-semibold lg:text-4xl">
+        </p>
+        <p class="font-serif text-2xl font-medium leading-tight">
           {about.contributors.website}
-        </Description>
+        </p>
       </div>
-    </div>
+    </section>
   </main>
 </Layout>
