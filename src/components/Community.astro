@@ -113,7 +113,6 @@ const values = [
     background-image:
       linear-gradient(145deg, rgb(255 255 255 / 0.16), transparent 42%),
       linear-gradient(180deg, rgb(255 255 255 / 0.1), rgb(0 0 0 / 0.08));
-    backdrop-filter: saturate(1.08) contrast(1.04);
     box-shadow:
       0 0 0 5px rgb(255 255 255 / 0.1),
       0 12px 18px color-mix(in srgb, var(--zen-dark) 16%, transparent),
@@ -123,14 +122,12 @@ const values = [
     text-shadow: 0 1px 0 rgb(255 255 255 / 0.12);
   }
 
-  .community-pill::after {
-    content: '';
-    position: absolute;
-    inset: 0.18rem 0.42rem auto;
-    height: 32%;
-    border-radius: 0.55rem;
-    background: linear-gradient(180deg, rgb(255 255 255 / 0.18), transparent);
-    pointer-events: none;
+  :global(html[data-theme='dark']) .community-pill {
+    box-shadow:
+      0 0 0 1px rgb(255 255 255 / 0.12),
+      0 8px 14px rgb(0 0 0 / 0.16),
+      inset 0 1px 0 rgb(255 255 255 / 0.18),
+      inset 0 -2px 4px rgb(0 0 0 / 0.16);
   }
 
   .community-pill--compassion {
@@ -201,12 +198,6 @@ const values = [
       --pill-scale: 1.06;
       right: 0.25rem;
       top: 14rem;
-      box-shadow:
-        0 0 0 6px rgb(255 255 255 / 0.12),
-        0 14px 20px color-mix(in srgb, var(--zen-dark) 18%, transparent),
-        0 2px 4px color-mix(in srgb, var(--zen-dark) 12%, transparent),
-        inset 0 1px 0 rgb(255 255 255 / 0.3),
-        inset 0 -2px 4px rgb(0 0 0 / 0.1);
     }
   }
 
