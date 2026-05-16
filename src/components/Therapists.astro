@@ -39,7 +39,7 @@ const hasImage = Boolean(therapist.image?.src)
     <!-- Portrait column -->
     <div class="therapist-portrait md:col-span-5" data-motion-item>
       <figure
-        class="therapist-portrait-frame relative min-h-[28rem] w-full overflow-hidden rounded-3xl sm:min-h-[34rem] md:min-h-[38rem]"
+        class="therapist-portrait-frame relative min-h-[28rem] w-full sm:min-h-[34rem] md:min-h-[38rem]"
       >
         {
           hasImage ? (
@@ -179,19 +179,7 @@ const hasImage = Boolean(therapist.image?.src)
 
 <style>
   .therapist-portrait-frame {
-    background:
-      radial-gradient(circle at 50% 18%, rgb(255 255 255 / 0.82), transparent 34%),
-      linear-gradient(160deg, rgb(221 235 211 / 0.72), rgb(246 224 210 / 0.44) 52%, transparent);
-    box-shadow: 0 20px 45px color-mix(in srgb, var(--zen-dark) 10%, transparent);
-  }
-
-  .therapist-portrait-frame::before {
-    content: '';
-    position: absolute;
-    inset: 12% 12% 8%;
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--zen-olive) 16%, transparent);
-    filter: blur(22px);
+    background: transparent;
   }
 
   .therapist-portrait-image {
