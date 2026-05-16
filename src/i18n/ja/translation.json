@@ -23,6 +23,18 @@
         "titles": ["痛みを抱える", "体のための", "ケア。"],
         "description": "マッサージは贅沢ではなく、メンテナンスです。睡眠・仕事・可動域、またはご家族の日常の快適さに痛みが影響している場合も、目の前の体の状態から丁寧に始めます。",
         "featureTabs": {
+          "facial": {
+            "title": "フェイシャル",
+            "description": "肌を整え、顔まわりの緊張をやわらげる集中ケアです。"
+          },
+          "bodyScrub": {
+            "title": "ボディスクラブ",
+            "description": "全身の角質ケアで肌をなめらかにし、巡りとリセット感を促します。"
+          },
+          "aromatherapy": {
+            "title": "アロマセラピー",
+            "description": "穏やかな香りとやさしいボディワークで、ストレス緩和をサポートします。"
+          },
           "deepTissue": {
             "title": "ディープティシュー",
             "description": "背中、肩、腰の頑固なコリに集中したゆっくりとした圧。慢性的な緊張に最適です。"
@@ -35,9 +47,17 @@
             "title": "タイ式セラピー",
             "description": "アシストストレッチとリズミカルな圧で可動域を回復。年齢を重ねた体や硬くなった関節に。"
           },
+          "stoneMassage": {
+            "title": "ストーンマッサージ",
+            "description": "温めた石と安定した圧で、緊張した筋肉をゆるめ深いリラックスへ導きます。"
+          },
           "triggerPoint": {
             "title": "トリガーポイント",
             "description": "頭痛・坐骨神経痛・なかなか取れない痛みへの的確なアプローチ。"
+          },
+          "hydroTherapy": {
+            "title": "ハイドロセラピー",
+            "description": "温熱と水を活用した回復ケアで、巡り・可動域・施術後の楽さをサポートします。"
           }
         }
       },
@@ -71,12 +91,42 @@
         "cta": "セッションを予約"
       },
       "pricing": {
-        "title": ["料金。"],
-        "description": "メンバーシップなし、追加販売なし。テーブルの上で過ごす時間だけ。",
+        "title": ["施術料金。"],
+        "description": "その日の体に合うケアをお選びください。",
         "tiers": {
-          "sixty": { "title": "60 分", "price": "$90", "subtitle": "集中セッション" },
-          "ninety": { "title": "90 分", "price": "$120", "subtitle": "人気No.1", "featured": true },
-          "twenty": { "title": "120 分", "price": "$160", "subtitle": "完全リセット" }
+          "facial": { "title": "フェイシャル", "price": "$7,000", "subtitle": "肌を整えるケア" },
+          "bodyScrub": { "title": "ボディスクラブ", "price": "$8,000", "subtitle": "角質ケア" },
+          "aromatherapy": {
+            "title": "アロマセラピー",
+            "price": "$10,000",
+            "subtitle": "香りで支えるリラクゼーション"
+          },
+          "swedish": {
+            "title": "スウェーデン式",
+            "price": "$8,000",
+            "subtitle": "基本のリラクゼーション"
+          },
+          "stoneMassage": {
+            "title": "ストーンマッサージ",
+            "price": "$15,000",
+            "subtitle": "温石セラピー"
+          },
+          "triggerPoint": {
+            "title": "トリガーポイント",
+            "price": "料金未定",
+            "subtitle": "集中した痛みのケア"
+          },
+          "thai": { "title": "タイ式", "price": "$12,000", "subtitle": "ストレッチと可動域ケア" },
+          "deepTissue": {
+            "title": "ディープティシュー",
+            "price": "$15,000",
+            "subtitle": "深い圧の集中ケア"
+          },
+          "hydroTherapy": {
+            "title": "ハイドロセラピー",
+            "price": "$16,000",
+            "subtitle": "水を活用した回復ケア"
+          }
         }
       },
       "community": {

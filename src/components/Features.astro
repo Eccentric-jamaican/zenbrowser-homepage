@@ -17,17 +17,27 @@ interface Props {
 const { titles } = Astro.props
 
 const audienceTags: Record<string, string> = {
+  facial: 'Skin refresh and calm',
+  bodyScrub: 'Exfoliation and renewal',
+  aromatherapy: 'Scent-led nervous system support',
   deepTissue: 'Pain that keeps returning',
   swedish: 'Stress and guarded muscles',
+  stoneMassage: 'Heat, pressure, and deep ease',
   thai: 'Stiff joints and reduced mobility',
   triggerPoint: 'Headaches, sciatica, referral pain',
+  hydroTherapy: 'Water-based recovery support',
 }
 
 const treatmentSprites: Record<string, string> = {
+  facial: '/treatments/treatment-hands.png',
+  bodyScrub: '/treatments/treatment-breath.png',
+  aromatherapy: '/treatments/treatment-breath.png',
   deepTissue: '/treatments/treatment-deep-tissue.png',
   swedish: '/treatments/treatment-swedish.png',
+  stoneMassage: '/treatments/treatment-hands.png',
   thai: '/treatments/treatment-thai.png',
   triggerPoint: '/treatments/treatment-trigger-point.png',
+  hydroTherapy: '/treatments/treatment-mobility.png',
 }
 ---
 

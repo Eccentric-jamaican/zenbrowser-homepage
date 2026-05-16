@@ -23,6 +23,18 @@
         "titles": ["Care for ", "bodies that ", "carry pain."],
         "description": "Massage is maintenance, not luxury. Whether pain is limiting your sleep, your work, your mobility, or a parent's day-to-day comfort, we begin with the body in front of us.",
         "featureTabs": {
+          "facial": {
+            "title": "Facial",
+            "description": "A focused facial treatment to refresh the skin, ease facial tension, and leave you feeling lighter."
+          },
+          "bodyScrub": {
+            "title": "Body Scrub",
+            "description": "Full-body exfoliation for smoother skin, renewed circulation, and a clean reset before deep rest."
+          },
+          "aromatherapy": {
+            "title": "Aromatherapy",
+            "description": "A restorative session using calming aroma blends alongside gentle bodywork to support stress relief."
+          },
           "deepTissue": {
             "title": "Deep Tissue",
             "description": "Slow, focused pressure that releases stubborn knots in the back, shoulders, and hips. Ideal for desk-bound professionals and chronic tension."
@@ -35,9 +47,17 @@
             "title": "Thai Therapy",
             "description": "Assisted stretching and rhythmic compression to restore mobility — particularly helpful for stiff joints and ageing bodies."
           },
+          "stoneMassage": {
+            "title": "Stone Massage",
+            "description": "Warm stones and steady pressure help soften guarded muscles and encourage deeper relaxation."
+          },
           "triggerPoint": {
             "title": "Trigger-Point",
             "description": "Targeted relief for headaches, sciatica, and ailments that won't quit. We work with referred-pain maps, not guesswork."
+          },
+          "hydroTherapy": {
+            "title": "Hydro Therapy",
+            "description": "Water-based heat and recovery work designed to support circulation, mobility, and post-treatment ease."
           }
         }
       },
@@ -71,17 +91,46 @@
         "cta": "Book a session"
       },
       "pricing": {
-        "title": ["Pricing."],
-        "description": "No memberships. No upsells. Just minutes on the table.",
+        "title": ["Treatment pricing."],
+        "description": "Choose the care that fits the body you are bringing in today.",
         "tiers": {
-          "sixty": { "title": "60 min", "price": "$90", "subtitle": "Targeted session" },
-          "ninety": {
-            "title": "90 min",
-            "price": "$120",
-            "subtitle": "Most popular",
-            "featured": true
+          "facial": { "title": "Facial", "price": "$7,000", "subtitle": "Skin refresh" },
+          "bodyScrub": {
+            "title": "Body Scrub",
+            "price": "$8,000",
+            "subtitle": "Exfoliation treatment"
           },
-          "twenty": { "title": "120 min", "price": "$160", "subtitle": "Full reset" }
+          "aromatherapy": {
+            "title": "Aromatherapy",
+            "price": "$10,000",
+            "subtitle": "Aroma-supported relaxation"
+          },
+          "swedish": {
+            "title": "Swedish",
+            "price": "$8,000",
+            "subtitle": "Classic relaxation massage"
+          },
+          "stoneMassage": {
+            "title": "Stone Massage",
+            "price": "$15,000",
+            "subtitle": "Heated stone therapy"
+          },
+          "triggerPoint": {
+            "title": "Trigger Point",
+            "price": "Price TBD",
+            "subtitle": "Targeted pain relief"
+          },
+          "thai": { "title": "Thai", "price": "$12,000", "subtitle": "Stretch and mobility work" },
+          "deepTissue": {
+            "title": "Deep Tissue",
+            "price": "$15,000",
+            "subtitle": "Focused deep-pressure care"
+          },
+          "hydroTherapy": {
+            "title": "Hydro Therapy",
+            "price": "$16,000",
+            "subtitle": "Water-based recovery support"
+          }
         }
       },
       "community": {
