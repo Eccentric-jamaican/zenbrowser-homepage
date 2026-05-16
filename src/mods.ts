@@ -35,7 +35,7 @@ const SERVICES: WellnessService[] = [
   {
     name: 'Body Scrub',
     description: 'Full-body exfoliation for smoother skin, renewed circulation, and a clean reset.',
-    image: '/treatments/treatment-breath.png',
+    image: '/treatments/treatment-body-scrub.png',
     downloadUrl: '/download',
     id: 'body-scrub',
     readme: '',
