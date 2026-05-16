@@ -265,6 +265,22 @@ const whatsappHref =
       inset 0 -2px 4px rgb(0 0 0 / 0.06);
   }
 
+  :global(html[data-theme='dark']) .hero-chip {
+    box-shadow:
+      0 0 0 1px rgb(255 255 255 / 0.12),
+      0 8px 14px rgb(0 0 0 / 0.16),
+      inset 0 1px 0 rgb(255 255 255 / 0.18),
+      inset 0 -2px 4px rgb(0 0 0 / 0.16);
+  }
+
+  :global(html[data-theme='dark']) .hero-chip--secondary {
+    box-shadow:
+      0 0 0 1px rgb(255 255 255 / 0.16),
+      0 6px 12px rgb(0 0 0 / 0.14),
+      inset 0 1px 0 rgb(255 255 255 / 0.18),
+      inset 0 -2px 4px rgb(0 0 0 / 0.14);
+  }
+
   .hero-panel {
     border-radius: 1.75rem;
     box-shadow: 0 1px 2px color-mix(in srgb, var(--zen-dark) 8%, transparent);
