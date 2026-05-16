@@ -21,7 +21,7 @@ const SERVICES: WellnessService[] = [
   {
     name: 'Facial',
     description: 'A focused facial treatment to refresh the skin and ease facial tension.',
-    image: '/treatments/treatment-hands.png',
+    image: '/treatments/treatment-facial.png',
     downloadUrl: '/download',
     id: 'facial',
     readme: '',
