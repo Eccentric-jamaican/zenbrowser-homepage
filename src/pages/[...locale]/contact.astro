@@ -1,0 +1,122 @@
+---
+import ArrowRightIcon from '~/icons/ArrowRightIcon.astro'
+import Layout from '~/layouts/Layout.astro'
+import { getLocale, getPath } from '~/utils/i18n'
+
+export { getStaticPaths } from '~/utils/i18n'
+
+const locale = getLocale(Astro)
+const getLocalePath = getPath(locale)
+const whatsappHref =
+  'https://wa.me/18767790854?text=' +
+  encodeURIComponent("Hi Meditation Fields, I'd like to book a session.")
+---
+
+<Layout
+  title="Contact & Book — Meditation Fields"
+  description="Book a massage therapy session with Meditation Fields in Kingston or contact us directly."
+>
+  <main class="container flex flex-col gap-10 py-16 sm:py-20 lg:gap-12 lg:py-24">
+    <section class="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end lg:gap-16">
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.28em] text-coral">Book a session</p>
+        <h1 class="mt-4 font-serif text-5xl font-medium leading-[1.05] sm:text-6xl">
+          Choose a time that works for your body.
+        </h1>
+      </div>
+      <div class="text-dark/70 flex max-w-xl flex-col gap-4 text-base leading-relaxed">
+        <p>
+          Use the calendar below to reserve your session with Garfield. If you would rather ask a
+          quick question first, WhatsApp is still open.
+        </p>
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex w-fit items-center gap-2 rounded-xl border border-white/30 bg-olive px-5 py-3 text-sm font-semibold text-paper transition-transform duration-150 hover:scale-[1.02] active:scale-[0.98]"
+        >
+          Message on WhatsApp
+          <ArrowRightIcon class="size-4" />
+        </a>
+      </div>
+    </section>
+
+    <section class="cal-shell">
+      <div id="my-cal-inline-1hr" class="cal-inline w-full"></div>
+    </section>
+
+    <div class="text-dark/60 grid gap-4 text-sm sm:grid-cols-3">
+      <p>60, 90, and 120 minute sessions are available.</p>
+      <p>Appointments are confirmed through Cal.com.</p>
+      <p>
+        Need directions? <a class="zen-link" href="https://maps.google.com/?q=Kingston"
+          >Find us in Kingston</a
+        >.
+      </p>
+    </div>
+
+    <a href={getLocalePath('/#pricing')} class="zen-link w-fit text-sm font-semibold">
+      View pricing before booking
+    </a>
+  </main>
+
+  <script is:inline>
+    ;(function (C, A, L) {
+      const p = function (a, ar) {
+        a.q.push(ar)
+      }
+      const d = C.document
+      C.Cal =
+        C.Cal ||
+        function () {
+          const cal = C.Cal
+          const ar = arguments
+          if (!cal.loaded) {
+            cal.ns = {}
+            cal.q = cal.q || []
+            d.head.appendChild(d.createElement('script')).src = A
+            cal.loaded = true
+          }
+          if (ar[0] === L) {
+            const api = function () {
+              p(api, arguments)
+            }
+            const namespace = ar[1]
+            api.q = api.q || []
+            if (typeof namespace === 'string') {
+              cal.ns[namespace] = cal.ns[namespace] || api
+              p(cal.ns[namespace], ar)
+              p(cal, ['initNamespace', namespace])
+            } else p(cal, ar)
+            return
+          }
+          p(cal, ar)
+        }
+    })(window, 'https://app.cal.com/embed/embed.js', 'init')
+
+    Cal('init', '1hr', { origin: 'https://app.cal.com' })
+
+    Cal.ns['1hr']('inline', {
+      elementOrSelector: '#my-cal-inline-1hr',
+      config: { layout: 'month_view', useSlotsViewOnSmallScreen: 'true' },
+      calLink: 'garfield-medfield/1hr',
+    })
+
+    Cal.ns['1hr']('ui', { hideEventTypeDetails: false, layout: 'month_view' })
+  </script>
+</Layout>
+
+<style>
+  .cal-shell {
+    min-height: 880px;
+  }
+
+  .cal-inline {
+    min-height: 880px;
+    overflow: visible;
+  }
+
+  .cal-inline iframe {
+    min-height: 880px;
+  }
+</style>

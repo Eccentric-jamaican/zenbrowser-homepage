@@ -4,7 +4,7 @@ import InfoIcon from '~/icons/InfoIcon.astro'
 import { getIntlLocale } from '~/constants/i18n'
 import { releaseNotes as releaseNotesData } from '~/release-notes'
 import { getLocale, getPath, getUI } from '~/utils/i18n'
-import { type ReleaseNote, getReleaseNoteFirefoxVersion } from '../release-notes'
+import { type ReleaseNote } from '../release-notes'
 import ReleaseNoteListItem from './ReleaseNoteListItem.astro'
 export type Props = ReleaseNote
 const { isTwilight, ...props } = Astro.props
@@ -25,15 +25,9 @@ if (props.date) {
   date = new Date(Date.parse(`${year}-${month}-${day}`))
 }
 
-const ffVersion = getReleaseNoteFirefoxVersion(props)
 const currentReleaseIndex = releaseNotesData.findIndex(
   (releaseNote: ReleaseNote) => releaseNote.version === props.version
 )
-const prevReleaseNote = releaseNotesData[currentReleaseIndex + 1]
-let compareLink = ''
-if (prevReleaseNote && !isTwilight) {
-  compareLink = `https://github.com/zen-browser/desktop/compare/${prevReleaseNote.version}...${props.version}`
-}
 
 const isLatest = currentReleaseIndex === 0
 
@@ -57,12 +51,14 @@ const generateItems = (items: any, type: string) => {
       case 'fix':
         listItems[type].push({
           type: 'fix',
-          content: item.description ?? item,
+          content: item.issue
+            ? `${item.description ?? item} (ref: #${item.issue})`
+            : (item.description ?? item),
           ...(item.issue
             ? {
                 link: {
-                  text: `Bug gh-${item.issue}`,
-                  href: `https://github.com/zen-browser/desktop/issues/${item.issue}`,
+                  text: `Ref #${item.issue}`,
+                  href: getLocalePath('/whatsnew'),
                 },
               }
             : {}),
@@ -122,7 +118,7 @@ generateItems(props.knownIssues, 'known')
       isTwilight ? (
         <a
           class="!mb-2 block w-fit rounded-full bg-coral px-3 py-1 text-xs text-paper"
-          href={getLocalePath('/download?twilight')}
+          href={getLocalePath('/contact')}
         >
           {releaseNoteItem.twilight}
         </a>
@@ -142,60 +138,11 @@ generateItems(props.knownIssues, 'known')
             <>{releaseNoteItem.releaseChanges.replaceAll('{version}', props.version)}</>
           )
         }
-        {
-          ffVersion ? (
-            <>
-              <span class="text-muted-foreground mx-3 hidden sm:block">•</span>
-              <a
-                rel="noopener noreferrer"
-                class="text-xs text-coral underline decoration-wavy opacity-80"
-                href={`https://www.mozilla.org/en-US/firefox/${ffVersion}/releasenotes/`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {releaseNoteItem.firefoxVersion.replace('{version}', ffVersion)}
-              </a>
-            </>
-          ) : null
-        }
         <span class="text-muted-foreground mx-3 hidden sm:block">•</span>
         <a
-          rel="noopener noreferrer"
           class="zen-link whitespace-nowrap text-xs !no-underline opacity-80"
-          target="_blank"
-          href={`https://github.com/zen-browser/desktop/releases/tag/${isTwilight ? 'twilight-1' : props.version}`}
-          >{releaseNoteItem.githubRelease}</a
+          href={getLocalePath(`/release-notes#${props.version}`)}>{releaseNoteItem.githubRelease}</a
         >
-        {
-          !isTwilight ? (
-            <>
-              <span class="text-muted-foreground mx-3 hidden sm:block">•</span>
-              <a
-                rel="noopener noreferrer"
-                class="zen-link whitespace-nowrap text-xs !no-underline opacity-80"
-                target="_blank"
-                href={`https://github.com/zen-browser/desktop/actions/runs/${props.workflowId}`}
-              >
-                {releaseNoteItem.workflowRun}
-              </a>
-            </>
-          ) : null
-        }
-        {
-          compareLink !== '' ? (
-            <>
-              <span class="text-muted-foreground mx-3 hidden sm:block">•</span>
-              <a
-                rel="noopener noreferrer"
-                class="zen-link whitespace-nowrap text-xs !no-underline opacity-80"
-                target="_blank"
-                href={compareLink}
-              >
-                {releaseNoteItem.compareChanges}
-              </a>
-            </>
-          ) : null
-        }
       </div>
       <div class="text-xs font-bold opacity-80">
         {date && date.toLocaleDateString(getIntlLocale(locale), { dateStyle: 'long' })}

@@ -2,7 +2,7 @@
 import { icon, library } from '@fortawesome/fontawesome-svg-core'
 import { faSort, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
 import Xmark from '~/icons/XmarkIcon.astro'
-import { type ZenTheme } from '~/mods'
+import { type WellnessService } from '~/mods'
 import { getPath, type Locale } from '~/utils/i18n'
 
 // Add icons to the library
@@ -14,7 +14,7 @@ const ascSortIcon = icon({ prefix: 'fas', iconName: 'sort-up' })
 const descSortIcon = icon({ prefix: 'fas', iconName: 'sort-down' })
 
 interface Props {
-  allMods: ZenTheme[]
+  allMods: WellnessService[]
   locale: Locale
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   translations: any

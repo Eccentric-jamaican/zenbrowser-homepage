@@ -1,13 +1,12 @@
 ---
-import Button from '~/components/Button.astro'
 import Description from '~/components/Description.astro'
 import SocialMediaStrip from '~/components/SocialMediaStrip.astro'
-import ArrowRightIcon from '~/icons/ArrowRightIcon.astro'
 import Layout from '~/layouts/Layout.astro'
 
 import Video from '~/components/Video.astro'
 import { releaseNotes } from '~/release-notes'
 import whatsNewText from '~/release-notes/whats-new.json'
+import { getIntlLocale } from '~/constants/i18n'
 import { getLocale, getUI } from '~/utils/i18n'
 export { getStaticPaths } from '~/utils/i18n'
 
@@ -15,20 +14,21 @@ let latestVersion = releaseNotes[0]
 
 const locale = getLocale(Astro)
 
+const releaseWhatsAppContact = `https://wa.me/18767790854`
+const latestDateText = latestVersion.date
+  ? new Date(Date.parse(latestVersion.date.split('/').reverse().join('-'))).toLocaleDateString(
+      getIntlLocale(locale),
+      { dateStyle: 'long' }
+    )
+  : releaseNotes[0].date
+
 const {
   routes: { whatsNew },
   layout,
 } = getUI(locale)
 
-// Just redirect to the release notes if we are in a patch version
-if (latestVersion.version.split('.').length > 2) {
-  if (whatsNewText[1] !== latestVersion.version) {
-    return Astro.redirect(`/release-notes#${latestVersion.version}`)
-  } else {
-    // We need to set the last major version for the text to make sense
-    const majorVersion = latestVersion.version.split('.').slice(0, 2).join('.') + 'b'
-    latestVersion = releaseNotes.find(v => v.version === majorVersion) || latestVersion
-  }
+if (whatsNewText[1] !== latestVersion.version) {
+  latestVersion = releaseNotes[0]
 }
 ---
 
@@ -41,36 +41,24 @@ if (latestVersion.version.split('.').length > 2) {
         <Description class="text-5xl font-bold md:text-6xl"
           >{whatsNew.title.replace('{latestVersion.version}', latestVersion.version)}</Description
         >
-        <Description>{latestVersion.date}</Description>
+        <Description>{latestDateText}</Description>
       </div>
       <div>
         <Fragment set:html={whatsNewText[0].replace(/\n/g, '<br>')} />
       </div>
       <ul class="hidden list-disc flex-col gap-2 xl:container xl:flex">
-        <a href="https://github.com/zen-browser/desktop/issues/new/choose" target="_blank">
+        <a href={releaseWhatsAppContact} target="_blank" rel="noopener noreferrer">
           <li>
-            <Description class="text-base font-bold">
-              {whatsNew.reportIssue}
-            </Description>
+            <Description class="text-base font-bold">{whatsNew.reportIssue}</Description>
           </li>
         </a>
-        <a href="https://discord.gg/zen-browser" target="_blank">
+        <a href={releaseWhatsAppContact} target="_blank" rel="noopener noreferrer">
           <li>
-            <Description class="text-base font-bold">
-              {whatsNew.joinDiscord}
-            </Description>
+            <Description class="text-base font-bold">{whatsNew.joinDiscord}</Description>
           </li>
         </a>
       </ul>
       <div class="flex flex-wrap gap-8 place-self-start xl:place-self-center">
-        <Button
-          href={`/release-notes#${latestVersion.version}`}
-          isPrimary
-          class="flex w-fit items-center gap-2"
-        >
-          <span>{whatsNew.readFullReleaseNotes}</span>
-          <ArrowRightIcon />
-        </Button>
         <SocialMediaStrip gap="6" />
       </div>
     </div>

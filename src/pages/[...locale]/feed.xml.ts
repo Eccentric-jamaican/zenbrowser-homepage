@@ -9,7 +9,7 @@ const RSS_ENTRY_LIMIT = 20
 
 /**
  * Handles the GET request for the `feed.xml` endpoint.
- * @returns The RSS feed for the Zen Browser release notes.
+ * @returns The RSS feed for Meditation Fields studio updates.
  */
 export function GET(context: { url: URL }) {
   // Just in case the release notes array is empty for whatever reason.
@@ -17,27 +17,28 @@ export function GET(context: { url: URL }) {
     releaseNotes.length > 0 ? formatRssDate(releaseNotes[0].date as string) : new Date()
 
   const rssData: RSSOptions = {
-    title: 'Zen Browser Release Notes',
-    description: 'Release Notes for the Zen Browser',
+    title: 'Meditation Fields Studio Updates',
+    description:
+      'Latest announcements, schedule updates, and wellness updates from Meditation Fields.',
     site: context.url,
     items: [],
     customData: `
             <language>en</language>
-            <link>https://www.zen-browser.app/release-notes</link>
-            <copyright>Zen Browser © ${new Date().getFullYear()} - Made with ❤️ by the Zen team.</copyright>
+            <link>https://www.meditationfields.com/whatsnew</link>
+            <copyright>Meditation Fields © ${new Date().getFullYear()} - All calm, all care.</copyright>
             <pubDate>${pubDate(latestDate)}</pubDate>
             <image>
-                <url>https://www.zen-browser.app/favicon.ico</url>
-                <title>Zen Browser</title>
-                <link>https://www.zen-browser.app</link>
+                <url>https://www.meditationfields.com/favicon.ico</url>
+                <title>Meditation Fields</title>
+                <link>https://www.meditationfields.com</link>
             </image>
         `,
   }
 
   for (const releaseNote of releaseNotes.slice(0, RSS_ENTRY_LIMIT)) {
     rssData.items.push({
-      title: `Release notes for version ${releaseNote.version}`,
-      link: `https://www.zen-browser.app/release-notes/${releaseNote.version}`,
+      title: `Studio update ${releaseNote.version}`,
+      link: `https://www.meditationfields.com/whatsnew#${releaseNote.version}`,
       pubDate: formatRssDate(releaseNote.date as string),
       description: releaseNote.extra,
       content: formatReleaseNote(releaseNote),
@@ -73,8 +74,8 @@ function formatRssDate(dateStr: string) {
  */
 function formatReleaseNote(releaseNote: ReleaseNote) {
   let content = `<p>
-        If you encounter any issues, please report them on <a href="https://github.com/zen-browser/desktop/issues/">the issues page</a>.
-        Thanks everyone for your feedback! ❤️
+        If you have questions about our services or bookings, message us on <a href="https://wa.me/18767790854">WhatsApp</a>.
+        Thanks for supporting our studio. ❤️
     </p>`
 
   if (releaseNote.extra) {
@@ -82,12 +83,12 @@ function formatReleaseNote(releaseNote: ReleaseNote) {
   }
 
   content += addReleaseNoteSection(
-    '⚠️ Breaking changes',
+    '⚠️ Important updates',
     releaseNote.breakingChanges?.map(breakingChangeToReleaseNote)
   )
-  content += addReleaseNoteSection('✓ Fixes', releaseNote.fixes?.map(fixToReleaseNote))
-  content += addReleaseNoteSection('🖌 Theme Changes', releaseNote.themeChanges)
-  content += addReleaseNoteSection('⭐ Features', releaseNote.features)
+  content += addReleaseNoteSection('✓ Service updates', releaseNote.fixes?.map(fixToReleaseNote))
+  content += addReleaseNoteSection('🖌 Studio highlights', releaseNote.themeChanges)
+  content += addReleaseNoteSection('⭐ New additions', releaseNote.features)
 
   return content
 }
@@ -119,7 +120,7 @@ function fixToReleaseNote(fix?: Exclude<ReleaseNote['fixes'], undefined>[number]
 
   let note = fix.description
   if (fix.issue) {
-    note += ` (<a href="https://github.com/zen-browser/desktop/issues/${fix.issue}" target="_blank">#${fix.issue}</a>)`
+    note += ` (Ref #${fix.issue})`
   }
   return note
 }
@@ -135,7 +136,7 @@ function breakingChangeToReleaseNote(
     return ''
   }
 
-  return `${breakingChange.description} (<a href="${breakingChange.link}" target="_blank">Learn more</a>)`
+  return breakingChange.description
 }
 
 function pubDate(date?: Date) {

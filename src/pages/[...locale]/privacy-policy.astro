@@ -1,10 +1,11 @@
 ---
 import Title from '~/components/Title.astro'
 import Layout from '~/layouts/Layout.astro'
-import { getLocale, getUI } from '~/utils/i18n'
+import { getLocale, getPath, getUI } from '~/utils/i18n'
 export { getStaticPaths } from '~/utils/i18n'
 
 const locale = getLocale(Astro)
+const getLocalePath = getPath(locale)
 
 const {
   routes: { privacyPolicy },
@@ -73,14 +74,12 @@ const {
     <p>{privacyPolicy.sections.sync.body}</p>
     <ul>
       <li>
-        <a class="zen-link" href="https://www.mozilla.org/en-US/privacy/mozilla-accounts/"
+        <a class="zen-link" href={getLocalePath('/privacy-policy#7-our-website-and-services')}
           >{privacyPolicy.sections.sync.link1}</a
         >
       </li>
       <li>
-        <a
-          class="zen-link"
-          href="https://support.mozilla.org/en-US/kb/how-firefox-securely-saves-passwords#:~:text=Firefox%20Desktop%20encrypts%20your%20passwords,cryptography%20to%20obscure%20your%20passwords."
+        <a class="zen-link" href={getLocalePath('/privacy-policy#6-your-control')}
           >{privacyPolicy.sections.sync.link2}</a
         >
       </li>
@@ -117,7 +116,7 @@ const {
     <p>
       {privacyPolicy.sections.changes.body}
     </p>
-    <Title class="mt-16 text-4xl font-bold" id="9-other-telemetry-done-by-mozilla-firefox">
+    <Title class="mt-16 text-4xl font-bold" id="9-external-services-and-technical-disclosures">
       {privacyPolicy.sections.otherTelemetry.title}
     </Title>
     <p>
@@ -125,8 +124,10 @@ const {
     </p>
     <ul>
       <li>
-        Please check <a class="zen-link" href="https://www.mozilla.org/en-US/privacy/"
-          >{privacyPolicy.sections.otherTelemetry.firefoxPrivacyNotice}</a
+        {privacyPolicy.sections.otherTelemetry.linkPrefix}<a
+          class="zen-link"
+          href={getLocalePath('/privacy-policy#7-our-website-and-services')}
+          >{privacyPolicy.sections.otherTelemetry.servicesNotice}</a
         >
         {privacyPolicy.sections.otherTelemetry.forMoreInformation}
       </li>
@@ -140,13 +141,13 @@ const {
     <ul>
       <li>
         {privacyPolicy.sections.contact.discord}
-        <a class="zen-link" href="https://discord.gg/zen-browser">
+        <a class="zen-link" href="https://wa.me/18767790854">
           {privacyPolicy.sections.contact.discordLink}
         </a>
       </li>
       <li>
         {privacyPolicy.sections.contact.github}
-        <a class="zen-link" href="https://github.com/zen-browser">
+        <a class="zen-link" href="mailto:hello@meditationfields.com">
           {privacyPolicy.sections.contact.githubLink}
         </a>
       </li>

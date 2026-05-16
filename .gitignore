@@ -36,3 +36,4 @@ npm-debug.log*
 .cspellcache
 # Turborepo
 .turbo
+.vercel

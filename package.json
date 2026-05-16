@@ -1,5 +1,5 @@
 {
-  "name": "www",
+  "name": "meditation-fields-homepage",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -22,7 +22,7 @@
     "test": "vitest run",
     "test:coverage": "vitest --coverage",
     "test:playwright": "playwright test --reporter=list",
-    "prepare": "lefthook install"
+    "prepare": "node -e \"if (process.env.CI || process.env.VERCEL) process.exit(0); process.exit(1)\" || lefthook install"
   },
   "dependencies": {
     "@astrojs/check": "0.9.8",
@@ -43,6 +43,7 @@
     "autoprefixer": "10.4.14",
     "clsx": "2.1.1",
     "date-fns": "4.1.0",
+    "framer-motion": "^12.38.0",
     "free-astro-components": "1.2.0",
     "jiti": "2.6.1",
     "lefthook": "1.13.6",

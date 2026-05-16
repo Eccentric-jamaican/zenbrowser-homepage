@@ -37,12 +37,24 @@ export default {
       },
       colors: {
         paper: 'var(--zen-paper)',
-        coral: '#F76F53',
+        // Brand: Meditation Fields
+        mint: '#63DDBB',
+        cream: '#FFF0B8',
+        olive: '#263524',
+        linen: '#F7F1E8',
+        clay: '#E6B66E',
+        ink: '#2E332A',
+        // Coral kept as alias to brand signature mint for legacy refs
+        coral: '#2F8F73',
         dark: 'var(--zen-dark)',
         subtle: 'var(--zen-subtle)',
         muted: 'var(--zen-muted)',
         'zen-blue': '#6287f5',
         'zen-green': '#63f78b',
+      },
+      fontFamily: {
+        serif: ['Fraunces', 'Junicode', 'serif'],
+        sans: ['Manrope', 'system-ui', 'sans-serif'],
       },
       keyframes: {
         fadeIn: {

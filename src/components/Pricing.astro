@@ -1,0 +1,68 @@
+---
+import { getLocale, getPath, getUI } from '~/utils/i18n'
+
+const locale = getLocale(Astro)
+const getLocalePath = getPath(locale)
+const {
+  routes: {
+    index: { pricing },
+  },
+} = getUI(locale)
+
+const tiers = Object.values(pricing.tiers)
+---
+
+<section
+  id="pricing"
+  data-motion-section
+  class="relative flex w-full flex-col py-12 text-start sm:py-16 lg:py-28"
+>
+  <div class="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+    <div>
+      <h2 class="font-serif text-4xl font-medium sm:text-6xl">
+        {pricing.title.map(t => <span>{t}</span>)}
+      </h2>
+      <p class="text-dark/70 mt-4 max-w-md">{pricing.description}</p>
+    </div>
+
+    <div class="divide-dark/10 divide-y">
+      {
+        tiers.map((tier: any) => (
+          <div class="grid gap-4 py-6 sm:grid-cols-[1fr_auto] sm:items-center" data-motion-item>
+            <div>
+              <p class="text-dark/45 text-xs uppercase tracking-[0.25em]">{tier.subtitle}</p>
+              <p class="mt-1 font-serif text-3xl">{tier.title}</p>
+              <p class="text-dark/65 mt-2 text-sm">
+                Personalised treatment plan, hot towel finish, and time to discuss what changed.
+              </p>
+            </div>
+            <div class="flex items-center justify-between gap-5 sm:flex-col sm:items-end sm:justify-center">
+              <p class="font-serif text-4xl">{tier.price}</p>
+              <a
+                href={getLocalePath('/contact')}
+                class="booking-chip flex items-center justify-center rounded-xl border border-white/30 bg-olive px-5 py-3 text-sm font-semibold text-paper transition-transform duration-150 hover:scale-[1.02] active:scale-[0.98]"
+              >
+                Book
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .booking-chip {
+    overflow: hidden;
+    background-image:
+      linear-gradient(145deg, rgb(255 255 255 / 0.14), transparent 42%),
+      linear-gradient(180deg, rgb(255 255 255 / 0.08), rgb(0 0 0 / 0.08));
+    box-shadow:
+      0 0 0 5px rgb(255 255 255 / 0.08),
+      0 12px 18px color-mix(in srgb, var(--zen-dark) 16%, transparent),
+      0 2px 4px color-mix(in srgb, var(--zen-dark) 12%, transparent),
+      inset 0 1px 0 rgb(255 255 255 / 0.28),
+      inset 0 -2px 4px rgb(0 0 0 / 0.1);
+  }
+</style>

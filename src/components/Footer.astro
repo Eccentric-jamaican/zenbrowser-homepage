@@ -1,6 +1,4 @@
 ---
-import Button from '~/components/Button.astro'
-import Circles from '~/components/Circles.astro'
 import Description from '~/components/Description.astro'
 import SocialMediaStrip from '~/components/SocialMediaStrip.astro'
 import ArrowRightIcon from '~/icons/ArrowRightIcon.astro'
@@ -24,7 +22,7 @@ const {
       class="flex w-full flex-col gap-4 text-center lg:w-1/2 lg:text-left"
       aria-labelledby="footer-title"
     >
-      <a href="/">
+      <a href={getLocalePath('/')}>
         <Description id="footer-title" class="text-6xl font-bold !text-paper"
           >{footer.title}</Description
         >
@@ -34,15 +32,14 @@ const {
       </Description>
     </section>
     <section class="grid gap-10 place-self-center lg:place-self-start">
-      <Button
-        href="/download"
-        isPrimary
-        class="h-fit w-fit bg-paper !text-dark"
+      <a
+        href="https://wa.me/18767790854"
+        class="footer-book-chip flex h-fit w-fit items-center justify-center gap-2 rounded-xl border border-white/30 bg-paper px-6 py-4 text-sm font-semibold text-dark transition-transform duration-150 hover:scale-[1.02] active:scale-[0.98]"
         aria-label={footer.download}
       >
         {footer.download}
         <ArrowRightIcon class="size-4" aria-hidden="true" />
-      </Button>
+      </a>
     </section>
     <section
       class="grid w-full max-w-5xl place-items-center gap-12 text-center sm:text-left"
@@ -85,18 +82,10 @@ const {
           </h2>
           <ul class="grid gap-2 opacity-80">
             <li>
-              <a href="https://docs.zen-browser.app/" class="font-normal">{footer.documentation}</a>
+              <a href={getLocalePath('/#pricing')} class="font-normal">{footer.documentation}</a>
             </li>
             <li>
-              <a href={getLocalePath('/mods')} class="font-normal">{footer.zenMods}</a>
-            </li>
-            <li>
-              <a href={getLocalePath('/release-notes')} class="font-normal">{footer.releaseNotes}</a
-              >
-            </li>
-            <li>
-              <a href={getLocalePath('/download?twilight')} class="font-normal">{footer.twilight}</a
-              >
+              <a href={getLocalePath('/contact')} class="font-normal">{footer.twilight}</a>
             </li>
           </ul>
         </nav>
@@ -106,20 +95,20 @@ const {
           </h2>
           <ul class="grid gap-2 opacity-80">
             <li>
-              <a href="https://discord.gg/zen-browser" class="font-normal">{footer.discord}</a>
+              <a href="https://wa.me/18767790854" class="font-normal">{footer.discord}</a>
             </li>
             <li>
-              <a href="https://status.zen-browser.app/" class="font-normal">{footer.uptimeStatus}</a
+              <a href="https://instagram.com/meditationfields" class="font-normal"
+                >{footer.uptimeStatus}</a
               >
             </li>
             <li>
-              <a href="https://github.com/zen-browser/desktop/issues/new/choose" class="font-normal"
+              <a href="mailto:hello@meditationfields.studio" class="font-normal"
                 >{footer.reportAnIssue}</a
               >
             </li>
             <li>
-              <a href="https://github.com/zen-browser/desktop/security/policy" class="font-normal"
-                >{footer.securtiy}</a
+              <a href="https://maps.google.com/?q=Kingston" class="font-normal">{footer.securtiy}</a
               >
             </li>
           </ul>
@@ -135,8 +124,32 @@ const {
         set:html={footer.madeWith.replace('{link}', getLocalePath('/about'))}
       />
     </section>
-    <section class="absolute bottom-0 right-0">
-      <Circles white multiplier={0.7} class="mb-[-100px] ml-auto mr-[-80px] hidden lg:block" />
+    <section
+      class="pointer-events-none absolute bottom-0 right-0 hidden lg:block"
+      aria-hidden="true"
+    >
+      <img
+        src="/flower.png"
+        alt=""
+        class="mb-[-80px] mr-[-80px] h-[520px] w-[520px] select-none object-contain opacity-90"
+        loading="lazy"
+        decoding="async"
+      />
     </section>
   </div>
 </footer>
+
+<style>
+  .footer-book-chip {
+    overflow: hidden;
+    background-image:
+      linear-gradient(145deg, rgb(255 255 255 / 0.28), transparent 42%),
+      linear-gradient(180deg, rgb(255 255 255 / 0.12), rgb(0 0 0 / 0.08));
+    box-shadow:
+      0 0 0 5px rgb(255 255 255 / 0.08),
+      0 12px 18px color-mix(in srgb, var(--zen-paper) 18%, transparent),
+      0 2px 4px rgb(0 0 0 / 0.18),
+      inset 0 1px 0 rgb(255 255 255 / 0.45),
+      inset 0 -2px 4px rgb(0 0 0 / 0.08);
+  }
+</style>

@@ -1,9 +1,4 @@
 ---
-import Image from 'astro/components/Image.astro'
-import ComImage from '~/assets/ComImage.png'
-import Button from '~/components/Button.astro'
-import CheckIcon from '~/icons/CheckIcon.astro'
-import GitHubIcon from '~/icons/GitHubIcon.astro'
 import { getLocale, getUI } from '~/utils/i18n'
 
 const locale = getLocale(Astro)
@@ -13,88 +8,211 @@ const {
     index: { community },
   },
 } = getUI(locale)
+
+const values = [
+  {
+    label: 'Fact-finding',
+    class: 'community-pill--compassion',
+    description:
+      'We start with the story: where pain shows up, what aggravates it, and what daily movements feel harder. This gives the session a clear, useful starting point.',
+  },
+  {
+    label: 'Evaluation',
+    class: 'community-pill--care',
+    description:
+      'Garfield checks posture, mobility, pressure tolerance, and areas that may be referring pain. The goal is to understand the body before asking it to change.',
+  },
+  {
+    label: 'Program',
+    class: 'community-pill--connection',
+    description:
+      'Your care plan is matched to age, sensitivity, medication, and mobility. It may combine release work, assisted movement, pacing, and simple between-visit guidance.',
+  },
+  {
+    label: 'Treatment',
+    class: 'community-pill--empowerment',
+    description:
+      'Hands-on work stays responsive, never rushed, and adjusts as your body responds. You leave knowing what changed and what to watch next.',
+  },
+]
 ---
 
 <section
   id="community"
-  class="relative flex w-full flex-col items-center gap-6 py-12 text-start md:text-center lg:py-36"
+  data-motion-section
+  class="community-approach relative flex w-full flex-col gap-12 overflow-hidden py-12 text-center sm:py-16 lg:py-28"
 >
-  <h2 class="mb-2 text-4xl font-bold sm:text-6xl">
-    {
-      community.title.map(title =>
-        title !== '\n' ? (
-          <span style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)">
-            {title}
-          </span>
-        ) : (
-          <br class="hidden md:block" />
-        )
-      )
-    }
-  </h2>
-  <p
-    class="text-base lg:w-1/2 lg:px-0"
-    style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+  <div
+    class="relative mx-auto min-h-[22rem] w-full max-w-5xl px-4 sm:min-h-[24rem] lg:min-h-[28rem]"
   >
-    <span class="opacity-80">{community.description}</span>
-  </p>
-  <div class="flex w-full flex-wrap gap-3 sm:gap-10 md:justify-center">
-    <div
-      class="community__button"
-      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
-    >
-      <Button class:list={['px-4']} href="https://github.com/zen-browser">
-        <GitHubIcon class="size-4" />
-        <span>{community.lists.freeAndOpenSource.title}</span>
-      </Button>
-    </div>
-    <div
-      class="community__button flex items-center gap-4"
-      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
-    >
-      <CheckIcon class="size-4" />
-      <span>{community.lists.simpleYetPowerful.title}</span>
-    </div>
-    <div
-      class="community__button flex items-center gap-4"
-      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
-    >
-      <CheckIcon class="size-4" />
-      <span>{community.lists.privateAndAlwaysUpToDate.title}</span>
+    <img
+      src="/relaxed-client-cutout.png"
+      alt=""
+      aria-hidden="true"
+      class="community-person pointer-events-none absolute left-1/2 top-0 h-24 w-24 -translate-x-1/2 object-contain object-bottom sm:h-28 sm:w-28"
+      loading="lazy"
+      decoding="async"
+    />
+
+    {
+      values.map(value => (
+        <span
+          class:list={[
+            'community-pill absolute rounded-xl border border-white/30 px-5 py-2 text-sm font-semibold text-paper',
+            value.class,
+          ]}
+          data-motion-item
+        >
+          {value.label}
+        </span>
+      ))
+    }
+
+    <div class="relative z-10 mx-auto flex max-w-3xl flex-col items-center pt-28 sm:pt-32 lg:pt-36">
+      <p class="text-xs uppercase tracking-[0.3em] text-coral">What to expect</p>
+      <h2
+        class="mt-5 max-w-3xl text-balance font-serif text-4xl font-medium leading-[1.04] sm:text-5xl lg:text-6xl"
+      >
+        <span>{community.title[0]}</span>
+        <span>{community.title[1]}</span>
+        <span>{community.title[3]}</span>
+      </h2>
+      <p class="text-dark/65 mt-5 max-w-2xl text-base leading-relaxed">
+        {community.description}
+      </p>
     </div>
   </div>
-  <span class="flex max-w-full lg:max-w-none lg:flex-none">
-    <Image
-      src={ComImage}
-      alt={community.images.community.alt}
-      class="rounded-3xl shadow-md lg:mx-auto dark:opacity-80"
-      style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
-    />
-  </span>
+
+  <div
+    class="community__flow mx-auto grid w-full max-w-5xl gap-7 text-left sm:grid-cols-2 lg:grid-cols-4"
+  >
+    {
+      values.map((value, index) => (
+        <div class="community__button flex flex-col gap-3" data-motion-item>
+          <p class="text-xs uppercase tracking-[0.28em] text-coral">
+            {String(index + 1).padStart(2, '0')}
+          </p>
+          <h3 class="font-serif text-2xl font-medium">{value.label}</h3>
+          <p class="text-dark/70 text-sm leading-relaxed">{value.description}</p>
+        </div>
+      ))
+    }
+  </div>
 </section>
 
-<script>
-  import { animate, onScroll, stagger } from 'animejs'
-
-  function initAnimations() {
-    const debug = false
-
-    const elements = document.querySelectorAll(
-      '#community h2 span, #community p, #community .community__button, #community img'
-    )
-
-    animate(elements, {
-      opacity: { from: 0.001, to: 1 },
-      translateY: { from: 20, to: 0 },
-      filter: { from: 'blur(4px)', to: 'blur(0px)' },
-      duration: 300,
-      delay: stagger(150),
-      ease: 'cubicBezier(0.25, 0.1, 0.25, 1)',
-      autoplay: onScroll({
-        target: '#community',
-        debug,
-      }),
-    })
+<style>
+  .community-person {
+    filter: drop-shadow(0 16px 22px color-mix(in srgb, var(--zen-dark) 12%, transparent));
   }
-  initAnimations()
-</script>
+
+  .community-pill {
+    overflow: hidden;
+    z-index: 20;
+    transform: rotate(var(--pill-rotation, 0deg)) scale(var(--pill-scale, 1));
+    animation: community-float 8s ease-in-out infinite;
+    background-image:
+      linear-gradient(145deg, rgb(255 255 255 / 0.16), transparent 42%),
+      linear-gradient(180deg, rgb(255 255 255 / 0.1), rgb(0 0 0 / 0.08));
+    backdrop-filter: saturate(1.08) contrast(1.04);
+    box-shadow:
+      0 0 0 5px rgb(255 255 255 / 0.1),
+      0 12px 18px color-mix(in srgb, var(--zen-dark) 16%, transparent),
+      0 2px 4px color-mix(in srgb, var(--zen-dark) 12%, transparent),
+      inset 0 1px 0 rgb(255 255 255 / 0.32),
+      inset 0 -2px 4px rgb(0 0 0 / 0.1);
+    text-shadow: 0 1px 0 rgb(255 255 255 / 0.12);
+  }
+
+  .community-pill::after {
+    content: '';
+    position: absolute;
+    inset: 0.18rem 0.42rem auto;
+    height: 32%;
+    border-radius: 0.55rem;
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.18), transparent);
+    pointer-events: none;
+  }
+
+  .community-pill--compassion {
+    --pill-rotation: 8deg;
+    left: 6%;
+    top: 2.5rem;
+    background-color: #91644e;
+  }
+
+  .community-pill--care {
+    --pill-rotation: -10deg;
+    left: 4%;
+    top: 11.5rem;
+    background-color: #6f9ed7;
+    animation-delay: -1.5s;
+  }
+
+  .community-pill--connection {
+    --pill-rotation: 4deg;
+    right: 7%;
+    top: 3.5rem;
+    background-color: #7d8c55;
+    animation-delay: -2.8s;
+  }
+
+  .community-pill--empowerment {
+    --pill-rotation: 8deg;
+    --pill-scale: 1.04;
+    right: 4%;
+    top: 12.5rem;
+    background-color: #e57967;
+    animation-delay: -4s;
+  }
+
+  @keyframes community-float {
+    0%,
+    100% {
+      translate: 0 0;
+    }
+
+    50% {
+      translate: 0 -8px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .community-pill {
+      padding: 0.45rem 0.85rem;
+      font-size: 0.75rem;
+    }
+
+    .community-pill--compassion {
+      left: 0.25rem;
+      top: 2.25rem;
+    }
+
+    .community-pill--care {
+      left: 0.25rem;
+      top: 13rem;
+    }
+
+    .community-pill--connection {
+      right: 0.25rem;
+      top: 3.5rem;
+    }
+
+    .community-pill--empowerment {
+      --pill-scale: 1.06;
+      right: 0.25rem;
+      top: 14rem;
+      box-shadow:
+        0 0 0 6px rgb(255 255 255 / 0.12),
+        0 14px 20px color-mix(in srgb, var(--zen-dark) 18%, transparent),
+        0 2px 4px color-mix(in srgb, var(--zen-dark) 12%, transparent),
+        inset 0 1px 0 rgb(255 255 255 / 0.3),
+        inset 0 -2px 4px rgb(0 0 0 / 0.1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .community-pill {
+      animation: none;
+    }
+  }
+</style>

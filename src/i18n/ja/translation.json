@@ -1,92 +1,107 @@
 {
   "routes": {
     "index": {
-      "title": "Zenブラウザー",
+      "title": "Meditation Fields — キングストンのマッサージセラピー",
       "hero": {
         "title": [
-          { "text": "ようこそ", "highlight": false },
+          { "text": "Fall ", "highlight": false },
+          { "text": "into ", "highlight": false },
           { "text": "\n", "highlight": false },
-          { "text": "静かな", "highlight": true },
-          { "text": "\n", "highlight": false },
-          { "text": "インターネット", "highlight": false },
-          { "text": "へ", "highlight": false }
+          { "text": "rest", "highlight": true },
+          { "text": "", "highlight": false }
         ],
         "description": [
-          "美しいデザイン、プライバシー重視、機能満載。",
-          "私たちが大切にしているのは、あなたのデータではなく、あなたの体験です。"
+          "心と体に深い呼吸を取り戻すためのマッサージセラピー。",
+          "キングストンでスウェーデン式・タイ式・ディープティシュー・トリガーポイント療法を提供。"
         ],
         "buttons": {
-          "beta": "ベータ版が利用可能です！",
-          "support": "サポートする ❤️"
+          "beta": "WhatsAppで予約",
+          "support": "サービスを見る"
         }
       },
       "features": {
-        "titles": ["生産性", "の", "極み"],
-        "description": "Zenは、生産性と集中力を高める機能が満載です。ブラウザーは作業の妨げではなく、作業を助けるツールであるべきです。",
+        "titles": ["痛みを抱える", "体のための", "ケア。"],
+        "description": "マッサージは贅沢ではなく、メンテナンスです。睡眠・仕事・可動域、またはご家族の日常の快適さに痛みが影響している場合も、目の前の体の状態から丁寧に始めます。",
         "featureTabs": {
-          "workspaces": {
-            "title": "ワークスペース",
-            "description": "タブをワークスペースごとに整理し、プロジェクトごとに分けて管理。簡単に切り替え可能です。"
+          "deepTissue": {
+            "title": "ディープティシュー",
+            "description": "背中、肩、腰の頑固なコリに集中したゆっくりとした圧。慢性的な緊張に最適です。"
           },
-          "compactMode": {
-            "title": "コンパクトモード",
-            "description": "Zenのコンパクトモードは、必要ないときにタブバーを隠して画面スペースを広く使い、必要なときに表示します。"
+          "swedish": {
+            "title": "スウェーデン式リラクゼーション",
+            "description": "全身を優しくほぐす長く流れるようなストロークで、自律神経を整え日常のストレスを解放します。"
           },
-          "glance": {
-            "title": "Glance",
-            "description": "リンクをポップアップで開き、タブを切り替えることなく内容を確認できます。新しいタブを開く前に素早くプレビューできます。"
+          "thai": {
+            "title": "タイ式セラピー",
+            "description": "アシストストレッチとリズミカルな圧で可動域を回復。年齢を重ねた体や硬くなった関節に。"
           },
-          "splitView": {
-            "title": "分割表示",
-            "description": "画面分割機能で、2つのタブを並べて表示し、比較や切り替えが簡単になります。"
+          "triggerPoint": {
+            "title": "トリガーポイント",
+            "description": "頭痛・坐骨神経痛・なかなか取れない痛みへの的確なアプローチ。"
           }
         }
       },
-      "sponsors": {
-        "title": "スポンサー",
-        "description": "ご支援いただいているスポンサーの皆様に感謝します。<br />あなたも<a href=\"/donate\" class=\"zen-link\">直接寄付する</a>ことでこの旅に参加できます！",
-        "sponsors": {
-          "tuta": {
-            "name": "Tuta",
-            "url": "https://tuta.com/"
-          },
-          "blacksmith": {
-            "name": "BlackSmith",
-            "url": "https://www.blacksmith.sh/"
-          },
-          "crowdin": {
-            "name": "Crowdin",
-            "url": "https://crowdin.com/"
-          }
+      "therapist": {
+        "eyebrow": "セラピスト紹介",
+        "title": ["施術を支える ", "確かな手。"],
+        "name": "ガーフィールド・マルコム",
+        "role": "チーフセラピスト · ディープティシュー & トリガーポイント",
+        "years": "施術歴 12年",
+        "initials": "GM",
+        "image": {
+          "src": "/therapist.png",
+          "alt": "ガーフィールド・マルコムのポートレート"
+        },
+        "bio": [
+          "ガーフィールドは12年にわたり、休む暇のない体に向き合ってきました。デスクワークで疲れた働き盛り、子育ての真っ只中にいる親世代、長年の緊張を抱えるご年配の方々。",
+          "施術はゆっくりと、しかし臨床的に。触れる前に体の声を聴き、推測ではなく関連痛のマップで判断し、その日のあなたの体に合わせて一回一回を仕立てます。"
+        ],
+        "credentials": [
+          "LMT, RMT（ライセンス保持）",
+          "臨床筋膜リリース",
+          "トリガーポイント療法",
+          "ケガ後のリハビリ対応",
+          "高齢者向けボディワーク"
+        ],
+        "stats": {
+          "experience": { "label": "施術歴", "value": "12年" },
+          "sessions": { "label": "施術実績", "value": "5,000+" },
+          "modalities": { "label": "習得手技", "value": "4" }
+        },
+        "cta": "セッションを予約"
+      },
+      "pricing": {
+        "title": ["料金。"],
+        "description": "メンバーシップなし、追加販売なし。テーブルの上で過ごす時間だけ。",
+        "tiers": {
+          "sixty": { "title": "60 分", "price": "$90", "subtitle": "集中セッション" },
+          "ninety": { "title": "90 分", "price": "$120", "subtitle": "人気No.1", "featured": true },
+          "twenty": { "title": "120 分", "price": "$160", "subtitle": "完全リセット" }
         }
       },
       "community": {
-        "title": ["私たちの", "コア", "バリュー"],
-        "description": "Zenは美しさ、パフォーマンス、プライバシーのバランスを最優先にしています。最高の体験を妥協せずに提供します。",
+        "title": ["体を急がせない", "初回セッション。"],
+        "description": "初回は意図的にシンプルです。丁寧に話を聞き、無理のない範囲で施術し、何が助けになったのかを分かりやすくお伝えします。",
         "lists": {
           "freeAndOpenSource": {
-            "title": "無料・オープンソース",
-            "description": "Zenは無料でオープンソース。誰でも自由に使え、カスタマイズできます。"
+            "title": "まず経緯を聞く",
+            "description": "どこが痛むか、何で悪化するか、日常のどの動きが難しくなったかを確認します。"
           },
           "simpleYetPowerful": {
-            "title": "シンプルでパワフル",
-            "description": "Zenは使いやすく、日常の作業も十分にこなせます。"
+            "title": "無理のない強さで",
+            "description": "年齢、感受性、服薬、可動域に合わせて圧・姿勢・ペースを調整します。"
           },
           "privateAndAlwaysUpToDate": {
-            "title": "プライバシー重視・常に最新",
-            "description": "Zenはプライバシーを守り、常に最新。無料で使え、カスタマイズも可能です。"
+            "title": "次の目安を残す",
+            "description": "反応した部位、次回の目安、日常で気をつけたいことを共有します。"
           }
         },
-        "images": {
-          "community": {
-            "alt": "コミュニティ"
-          }
-        }
+        "images": { "community": { "alt": "落ち着いた施術室" } }
       }
     },
     "mods": {
-      "title": "Zen Mods",
-      "description": "Zenブラウザー用の多彩なMod（プラグイン・テーマ）を探そう。気分やニーズに合ったテーマやプラグインで、ブラウザー体験をカスタマイズ！",
+      "title": "施術メニュー",
+      "description": "Meditation Fieldsの施術メニュー。痛みのケアと回復をサポートする施術を選べます。",
       "pagination": {
         "pagination": "{input} / {totalPages}（全{totalItems}件）"
       },
@@ -100,25 +115,25 @@
       "noResults": "結果が見つかりません",
       "noResultsDescription": "別のキーワードで検索するか、後でもう一度お試しください。",
       "slug": {
-        "title": "{name} - Zen Mods",
-        "description": "{name} Modの詳細（Zen用）",
+        "title": "{name} - サービス",
+        "description": "{name}の施術内容と対象を確認できます。",
         "alert": {
-          "description": "このテーマをインストールするにはZenが必要です。",
-          "button": "今すぐダウンロード！"
+          "description": "このサービスは予約制です。WhatsAppでお申込みください。",
+          "button": "今すぐ予約"
         },
         "createdBy": "作者：{author} • <b>v{version}</b>",
         "creationDate": "作成日：<b>{createdAt}</b>",
         "latestUpdate": "最終更新：<b>{updatedAt}</b>",
-        "visitModHomepage": "Modのホームページへ",
-        "installMod": "Modをインストール 🎉",
-        "uninstallMod": "Modをアンインストール",
+        "visitModHomepage": "施術詳細を見る",
+        "installMod": "この施術を予約 🎉",
+        "uninstallMod": "予約をキャンセル",
         "back": "戻る"
       }
     },
     "releaseNotes": {
       "topSection": {
-        "title": "変更履歴",
-        "description": "Zenの最新情報はこちら！<a class=\"zen-link\" href=\"#1.0.0-a.1\">最初のリリース</a>から<a class=\"zen-link\" href=\"#{latestVersion}\">{latestVersion}</a>まで、最高のブラウザーを目指して努力しています。ご意見ありがとうございます！❤️"
+        "title": "サロン更新情報",
+        "description": "最新情報は<a class=\"zen-link\" href=\"#1.0.0-a.1\">最新投稿</a>から<a class=\"zen-link\" href=\"#{latestVersion}\">{latestVersion}</a>までご案内しています。"
       },
       "list": {
         "support": "応援してください！",
@@ -137,17 +152,16 @@
       "chooseVersion": "バージョンを選択",
       "components": {
         "releaseNoteItem": {
-          "twilight": "Twilight",
-          "twilightChanges": "Twilightの変更点",
+          "twilight": "特別",
+          "twilightChanges": "特別なお知らせ",
           "releaseChanges": "v{version}",
-          "firefoxVersion": "Firefox {version}",
-          "githubRelease": "GitHubリリース",
+          "githubRelease": "更新内容",
           "workflowRun": "ワークフロー実行",
           "compareChanges": "変更を比較",
-          "twilightWarning": "TwilightはZenブラウザーのプレリリース版です。不具合や未完成の機能が含まれる場合があります。",
-          "reportIssues": " 問題が発生した場合は、<a rel=\"noopener noreferrer\" target=\"_blank\" href=\"https://github.com/zen-browser/desktop/issues/\" class=\"zen-link\">issueページ</a>でご報告ください。",
+          "twilightWarning": "一部の新機能は試験運用です。内容は変更される場合があります。",
+          "reportIssues": " ご要望やご質問はWhatsAppまで。",
           "learnMore": "詳細はこちら",
-          "viewIssue": "GitHubのIssue番号{issue}を見る"
+          "viewIssue": "参照番号 {issue}"
         }
       },
       "slug": {
@@ -156,14 +170,14 @@
       }
     },
     "about": {
-      "title": "Zenについて",
-      "description": "私たちは、ウェブ体験を大切にする開発者とデザイナーの集まりです。インターネットは、データ収集を心配せずに探索・学習・交流できる場所であるべきだと信じています。",
+      "title": "Meditation Fieldsについて",
+      "description": "キングストンの施術を提供するリラクゼーション・スタジオです。体と心の回復を大切にしています。",
       "littleHelp": "応援しませんか？",
       "mainTeam": {
         "title": "メインチーム",
-        "description": "最高のブラウジング体験を提供するために努力しているメンバーです。",
+        "description": "施術と施術体験を支えるメンバーです。",
         "subTitle": {
-          "browser": "ブラウザー",
+          "browser": "施術チーム",
           "website": "ウェブサイト・ブランディング"
         },
         "members": {
@@ -250,8 +264,8 @@
       },
       "contributors": {
         "title": "コントリビューター",
-        "description": "Zenの発展に貢献してくださった皆様です。",
-        "browser": "ブラウザー",
+        "description": "スタジオ運営を支えてくださっている皆様です。",
+        "browser": "チーム",
         "website": "ウェブサイト"
       }
     },
@@ -270,32 +284,32 @@
       }
     },
     "download": {
-      "title": "Ready to experience Zen?",
-      "description": "お使いのプラットフォーム向けにZenをダウンロード。すべてのダウンロードにはSHA256チェックサムが含まれています",
-      "twilightInfo": "現在Twilightモードです。最新の実験的機能とアップデートをダウンロードしています。",
-      "beta": "Zen is currently in ",
-      "otherDownload": "If your device got wrongly detected, <a href='https://github.com/zen-browser/desktop/releases/latest/' class='zen-link ml-[1px]'>see other downloads</a>.<br />Please report any issues you encounter on <a href='https://github.com/zen-browser/desktop/issues/new/choose' class='zen-link ml-[1px]'>GitHub</a>.",
+      "title": "ご予約はこちら",
+      "description": "ご希望の施術内容と日時をWhatsAppでご相談ください。",
+      "twilightInfo": "WhatsAppでご相談いただければ、空き枠と内容を確認してご案内します。",
+      "beta": "ご予約受付中です",
+      "otherDownload": "別窓口をご希望の場合は<a href='https://wa.me/18767790854' class='zen-link ml-[1px]'>WhatsApp</a>よりご連絡ください。",
       "alertInfo": {
-        "description": "You're currently in Twilight mode, this means you're downloading the latest experimental features and updates."
+        "description": "予約のご相談はWhatsAppで受け付けています。"
       },
       "platformSelector": {
-        "title": "プラットフォーム選択",
-        "description": "お使いのプラットフォームを選択してZenをダウンロード。"
+        "title": "予約を開始する",
+        "description": "WhatsAppでご希望の施術内容と日時を指定してください。"
       },
       "additionalResources": {
-        "title": "追加リソース",
+        "title": "予約前に確認",
         "sourceCode": {
-          "title": "ソースコード",
-          "description": "GitHubでZenのソースコードを閲覧・貢献・ビルドできます。"
+          "title": "予約連絡",
+          "description": "最初のメッセージで施術部位、経緯、お身体の状態をお知らせください。"
         },
         "documentation": {
           "title": "ドキュメント",
-          "description": "Zenの包括的なドキュメント・ガイド・チュートリアル。"
+          "description": "当院の利用ガイド、キャンセル規定、初回の流れを確認してください。"
         }
       },
       "securityNotice": {
-        "title": "検証済み・安全なダウンロード",
-        "description": "すべてのZenダウンロードは署名・検証済みです。公式サイトまたはGitHubからのダウンロードを推奨します。ダウンロードに問題がある場合やウイルス対策で警告が出た場合は、<a href='https://github.com/zen-browser/desktop/issues/new/choose' class='zen-link ml-1'>ご報告ください</a>。"
+        "title": "直接予約",
+        "description": "WhatsAppで直接やり取りし、日程や要望を確定してください。アプリのダウンロードは必要ありません。"
       },
       "platformNames": {
         "mac": "macOS",
@@ -333,40 +347,40 @@
       "sections": {
         "introduction": {
           "title": "はじめに",
-          "body": "Zenへようこそ！あなたのプライバシーは最優先です。本ポリシーでは、収集する情報の種類、利用方法、保護手段について説明します。",
+          "body": "Meditation Fieldsへようこそ。お客様のプライバシーは最優先です。本ポリシーでは、収集する情報、利用方法、保護策について説明します。",
           "summary": "データ販売なし - データ収集なし - トラッキングなし"
         },
         "noCollect": {
           "title": "1. 収集しない情報",
-          "body": "Zenはプライバシー重視で設計されています。個人データを収集・保存・共有しません。"
+          "body": "予約と施術に必要な情報を除き、個人情報を収集・保存・共有しません。"
         },
         "noTelemetry": {
           "title": "1.1. テレメトリーなし",
-          "body": "テレメトリーデータやクラッシュレポートは収集しません。",
-          "body2": "Mozilla Firefoxに組み込まれているテレメトリーも削除しています。"
+          "body": "本サイト・予約フローを通してテレメトリーデータやクラッシュレポートを収集しません。",
+          "body2": "事業運営に不要なバックグラウンド追跡は有効化していません。"
         },
         "noPersonalData": {
           "title": "1.2. 個人データの収集なし",
-          "body": "IPアドレス、閲覧履歴、検索クエリ、フォームデータなどの個人情報は一切収集しません。"
+          "body": "IPアドレス、閲覧履歴、検索クエリ、フォームの全件保存などの個人情報は、通常運用として収集しません。"
         },
         "noThirdParty": {
           "title": "1.3. サードパーティトラッキングなし",
-          "body": "サードパーティのトラッカーや解析ツールは一切許可していません。Mozillaはベースであり、サードパーティではありません。"
+          "body": "広告目的のトラッカーや解析ツールは許可していません。施術前後のやり取りは本サービス内で処理し、第三者には共有しません。"
         },
         "externalConnections": {
           "title": "1.4. 起動時の外部接続",
-          "body": "Zenは起動時にアップデート確認や接続性・ジオロケーション/プッシュ通知サービスのため外部接続を行う場合があります。これらの接続は機能上必要で、トラッキングやプロファイリング目的ではありません。about:configで無効化可能です。"
+          "body": "予約案内ページ配信のため、インフラにより技術情報の通信が発生する場合があります。個人識別用途には使わず、広告・行動ターゲティングには使用しません。"
         },
         "localStorage": {
           "title": "2. デバイスに保存される情報"
         },
         "browsingData": {
           "title": "2.1. 閲覧データ",
-          "body": "Zenは体験向上のため、いくつかのデータをローカルに保存します。"
+          "body": "本サイト体験向上のため、必要最低限の情報を端末内で一時保存する場合があります。"
         },
         "cookies": {
           "title": "クッキー",
-          "body": "クッキーはローカルに保存され、Zenや第三者と共有されません。管理はブラウザー設定から可能です。"
+          "body": "クッキーは端末内に保存されますが、広告配信のために共有されることはありません。管理はブラウザー設定から可能です。"
         },
         "cache": {
           "title": "キャッシュ・一時ファイル",
@@ -374,61 +388,62 @@
         },
         "settings": {
           "title": "2.2. 設定・プリファレンス",
-          "body": "カスタマイズや設定はすべてローカルに保存され、私たちがアクセスすることはありません。"
+          "body": "端末内の設定や表示情報はローカルで保持され、当社が直接アクセスすることはありません。"
         },
         "sync": {
           "title": "3. 同期機能",
-          "body": "ZenはMozilla FirefoxのSync機能を利用しています。データは暗号化されMozillaのサーバーに保存されます。私たちは内容を閲覧できません。",
-          "link1": "Mozilla Firefox Sync",
-          "link2": "パスワードの保存方法"
+          "body": "当サロンでは、端末間の予約アカウント同期機能は現時点で提供していません。",
+          "link1": "サポート（施術内容）",
+          "link2": "お支払い情報の扱い"
         },
         "addons": {
           "title": "4. アドオン・Mod",
-          "body": "MozillaのアドオンやZen Modsをインストール可能です。Zen Modsは当社サービスでホストされ、データ収集はありません。"
+          "body": "施術説明や価格説明などのコンテンツを追加でご案内できます。これらのページはサイト内静的ページとして扱い、アカウント登録やログインは不要です。"
         },
         "security": {
           "title": "5. データセキュリティ",
-          "body": "Zenはデータを収集しませんが、ローカルやMozillaサーバー上のデータ保護に努めています。安全なパスワードやデバイス暗号化、ソフトウェアの定期更新を推奨します。",
-          "note": "多くのセキュリティ対策はMozilla Firefoxによって提供されています。"
+          "body": "当サイトでは予約や連絡に必要な範囲の情報のみを扱い、端末側の保護設定を推奨しています。",
+          "note": "暗号化された通信と、安全なストレージ運用を基本方針としています。"
         },
         "control": {
           "title": "6. コントロール",
           "deletionTitle": "6.1. データ削除",
-          "deletionBody": "Zenが保存するすべてのローカルデータは、設定からいつでも削除できます。"
+          "deletionBody": "端末に保存されたローカル情報は、ブラウザーの設定でいつでも削除できます。"
         },
         "website": {
           "title": "7. ウェブサイト・サービス",
-          "body": "Zenのウェブサイト・サービスはサードパーティの解析やCDNを使用しません。Cloudflareでホストされていますが、解析・トラッキングは無効化されています。",
+          "body": "当サイトは広告配信向けのトラッキングを行いません。必要なインフラ提供者へは、技術情報のみが限定的に送られる場合があります。",
           "externalLinksTitle": "7.1. 外部リンク",
-          "externalLinksBody": "Zenには外部サイトへのリンクが含まれる場合があります。内容やプライバシーについては各サイトのポリシーをご確認ください。"
+          "externalLinksBody": "施術関連の外部リンクが含まれる場合があります。個人情報はご本人が同意した範囲でのみ共有されます。"
         },
         "changes": {
           "title": "8. ポリシーの変更",
           "body": "本ポリシーは必要に応じて更新されます。重要な変更時は日付を更新し、継続利用で同意したものとみなします。"
         },
         "otherTelemetry": {
-          "title": "9. Mozilla Firefoxによるその他のテレメトリー",
-          "body": "すべてのテレメトリー無効化に努めていますが、見落としがある場合もあります。詳細は下記リンクをご参照ください。",
-          "firefoxPrivacyNotice": "Firefoxプライバシー通知",
-          "forMoreInformation": "詳細はこちら。"
+          "title": "9. 外部サービスに関する技術的な留意",
+          "body": "必要最小限の運用品質情報のみ取り扱います。利用環境の情報開示については各環境側の通知をご確認ください。",
+          "linkPrefix": "詳細は",
+          "servicesNotice": "ウェブサイト・サービスの説明",
+          "forMoreInformation": "をご確認ください。"
         },
         "contact": {
           "title": "10. お問い合わせ",
-          "body": "本ポリシーやZenに関するご質問は下記までご連絡ください：",
-          "discord": "Discord: ",
-          "discordLink": "ZenのDiscord",
-          "github": "GitHub: ",
-          "githubLink": "Organization"
+          "body": "本ポリシーやご予約については下記へご連絡ください：",
+          "discord": "WhatsApp: ",
+          "discordLink": "Meditation Fields",
+          "github": "Email: ",
+          "githubLink": "hello@meditationfields.com"
         }
       }
     },
     "welcome": {
-      "title": ["ようこそ", "Zenへ", "!"]
+      "title": ["ようこそ", "Meditation Fieldsへ", "!"]
     },
     "whatsNew": {
       "title": "{latestVersion.version}の新機能！",
-      "reportIssue": "問題を報告する",
-      "joinDiscord": "Discordに参加",
+      "reportIssue": "ご質問はこちら",
+      "joinDiscord": "WhatsAppで連絡する",
       "readFullReleaseNotes": "リリースノート全文を読む"
     },
     "notFound": {
@@ -439,36 +454,36 @@
   },
   "layout": {
     "index": {
-      "title": "Zenブラウザー",
-      "description": "美しいデザイン、プライバシー重視、機能満載。"
+      "title": "Meditation Fields｜キングストンのマッサージ",
+      "description": "心身の回復と可動域改善を目指す施術を提供する、落ち着いた空間。"
     },
     "mods": {
-      "title": "Zen Mods",
-      "description": "Zen用の多彩なMod（プラグイン・テーマ）を探そう。気分やニーズに合ったテーマやプラグインで、ブラウザー体験をカスタマイズ！"
+      "title": "施術メニュー",
+      "description": "キングストンでの施術メニューをご紹介しています。"
     },
     "releaseNotes": {
-      "title": "リリースノート - Zen",
-      "description": "Zenの最新情報はこちら！最初のリリースから{latestVersion}まで、最高のブラウザーを目指して努力しています。ご意見ありがとうございます！❤️"
+      "title": "サロン更新情報",
+      "description": "当院の最新情報、スケジュール変更、キャンペーンをお届けします。"
     },
     "about": {
-      "title": "Zenについて",
-      "description": "私たちは、ウェブ体験を大切にする開発者とデザイナーの集まりです。インターネットは、データ収集を心配せずに探索・学習・交流できる場所であるべきだと信じています。"
+      "title": "当サロンについて",
+      "description": "認定セラピストによる施術を中心に、体と心の回復をサポートします。"
     },
     "donate": {
-      "title": "寄付 - Zen",
-      "description": "私たちは少人数の開発チームです。ご支援いただけると幸いです。"
+      "title": "ギフトカード",
+      "description": "ギフトカードで、回復の時間をプレゼントできます。"
     },
     "download": {
-      "title": "Zenをダウンロードする",
-      "description": "お使いのプラットフォーム向けにZenをダウンロード。すべてのダウンロードにはSHA256チェックサムが付属しています。"
+      "title": "ご予約",
+      "description": "ご希望日時をWhatsAppでご連絡いただくと、予約を確定します。"
     },
     "privacyPolicy": {
-      "title": "プライバシーポリシー - Zen",
-      "description": "あなたのプライバシーは最優先です。本ポリシーでは、収集する情報の種類、利用方法、保護手段について説明します。"
+      "title": "プライバシーポリシー",
+      "description": "予約・来店に必要な情報のみを取得し、安全に管理します。"
     },
     "welcome": {
       "title": "ようこそ！",
-      "description": "Zenへようこそ！"
+      "description": "Meditation Fieldsへようこそ！"
     },
     "whatsNew": {
       "title": "{latestVersion.version}の新機能！"
@@ -476,47 +491,47 @@
   },
   "components": {
     "footer": {
-      "title": "Zenブラウザー",
-      "description": "美しいデザイン、プライバシー重視、機能満載。私たちはあなたのデータではなく、体験を大切にします。",
-      "download": "ダウンロード",
+      "title": "Meditation Fields",
+      "description": "キングストンで心と体を整える治療のための空間です。",
+      "download": "予約する",
       "followUs": "フォローする",
       "aboutUs": "私たちについて",
       "teamAndContributors": "チーム・コントリビューター",
       "privacyPolicy": "プライバシーポリシー",
-      "getStarted": "はじめに",
-      "documentation": "ドキュメント",
-      "zenMods": "Zen Mods",
-      "releaseNotes": "リリースノート",
+      "getStarted": "予約",
+      "documentation": "施術料金",
+      "zenMods": "施術メニュー",
+      "releaseNotes": "パッケージ",
       "getHelp": "ヘルプ",
-      "securtiy": "Security",
-      "discord": "Discord",
-      "uptimeStatus": "稼働状況",
+      "securtiy": "営業時間・場所",
+      "discord": "WhatsApp",
+      "uptimeStatus": "Instagram",
       "reportAnIssue": "問題を報告",
-      "twilight": "Twilight",
-      "madeWith": "<span aria-label='love'>❤️</span>と共に<a href='{link}' class='zen-link inline-block font-bold'>Zenチーム</a>が作りました"
+      "twilight": "オンライン予約",
+      "madeWith": "<span aria-label='love'>❤️</span>と共に<a href='{link}' class='zen-link inline-block font-bold'>Meditation Fields</a>が作りました"
     },
     "nav": {
-      "brand": "Zenブラウザー",
+      "brand": "Meditation Fields",
       "menu": {
-        "gettingStarted": "はじめに",
-        "usefulLinks": "便利なリンク",
-        "mods": "Mods",
-        "download": "ダウンロード",
-        "discord": "Discord",
-        "releaseNotes": "リリースノート",
-        "zenMods": "Zen Mods",
-        "tryZenMods": "Zen Modsを試す",
-        "zenModsDesc": "Zen Modsでブラウザー体験をカスタマイズ。",
-        "releaseNotesDesc": "最新機能・改善情報はこちら。",
-        "discordDesc": "Discordコミュニティで他のZenユーザーと交流！",
-        "donate": "寄付 ❤️",
-        "donateDesc": "Zen開発を寄付で応援。",
-        "aboutUs": "私たちについて 🌟",
-        "aboutUsDesc": "Zenのチームについて知る。",
-        "documentation": "ドキュメント",
-        "documentationDesc": "ドキュメントでZenの使い方を学ぶ。",
-        "github": "GitHub",
-        "githubDesc": "GitHubでZen開発に貢献。",
+        "gettingStarted": "施術ガイド",
+        "usefulLinks": "スタジオ",
+        "mods": "料金",
+        "download": "予約する",
+        "discord": "WhatsApp",
+        "releaseNotes": "パッケージ",
+        "zenMods": "施術メニュー",
+        "tryZenMods": "全メニューを見る",
+        "zenModsDesc": "スウェディッシュ、タイ、深部組織の施術内容。",
+        "releaseNotesDesc": "回復に向けた各プランをご確認ください。",
+        "discordDesc": "最短でやり取りできる連絡先です。",
+        "donate": "ギフトカード",
+        "donateDesc": "癒しをプレゼントするのに最適です。",
+        "aboutUs": "私について 🌟",
+        "aboutUsDesc": "私と施術方針をご紹介します。",
+        "documentation": "営業時間・場所",
+        "documentationDesc": "キングストン店へのアクセス情報。",
+        "github": "クチコミ",
+        "githubDesc": "ご利用者様の声をチェック。",
         "menu": "メニュー"
       }
     }

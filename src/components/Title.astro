@@ -3,8 +3,6 @@ import { cn } from '~/utils/merge'
 const { class: className } = Astro.props
 ---
 
-<h1
-  class={cn('mb-[0.4rem] font-junicode text-5xl font-semibold leading-[0.9] text-dark', className)}
->
+<h1 class={cn('mb-[0.4rem] font-serif text-5xl font-medium leading-[0.95] text-dark', className)}>
   <slot />
 </h1>

@@ -1,12 +1,12 @@
 ---
-import { Image } from 'astro:assets'
 import Description from '~/components/Description.astro'
 import Layout from '~/layouts/Layout.astro'
-import { getLocale, getUI } from '~/utils/i18n'
+import { getLocale, getPath, getUI } from '~/utils/i18n'
 export { getStaticPaths } from '~/utils/i18n'
 import Button from '~/components/Button.astro'
 
 const locale = getLocale(Astro)
+const getLocalePath = getPath(locale)
 
 const {
   routes: { about },
@@ -21,7 +21,7 @@ const {
       <Description class="max-w-4xl">
         {about.description}
       </Description>
-      <Button href="/donate" class="w-fit" isPrimary>{about.littleHelp}</Button>
+      <Button href={getLocalePath('/donate')} class="w-fit" isPrimary>{about.littleHelp}</Button>
     </div>
     <div class="flex w-full flex-col gap-4">
       <div class="text-4xl font-bold leading-none lg:text-5xl">{about.mainTeam.title}</div>
@@ -60,30 +60,14 @@ const {
         {about.contributors.description}
       </Description>
       <div class="flex w-fit flex-col gap-4">
-        <Description class="text-3xl font-semibold lg:text-4xl"
-          >{about.contributors.browser}</Description
-        >
-        <a href="https://github.com/zen-browser/desktop/graphs/contributors"
-          ><Image
-            src="https://contributors-img.web.app/image?repo=zen-browser/desktop"
-            alt="Contributors"
-            width={500}
-            height={500}
-          /></a
-        >
+        <Description class="text-3xl font-semibold lg:text-4xl">
+          {about.contributors.browser}
+        </Description>
       </div>
       <div class="flex w-fit flex-col gap-4">
-        <Description class="text-3xl font-semibold lg:text-4xl"
-          >{about.contributors.website}</Description
-        >
-        <a href="https://github.com/zen-browser/www/graphs/contributors"
-          ><Image
-            src="https://contributors-img.web.app/image?repo=zen-browser/www"
-            alt="Contributors (website)"
-            width={500}
-            height={500}
-          /></a
-        >
+        <Description class="text-3xl font-semibold lg:text-4xl">
+          {about.contributors.website}
+        </Description>
       </div>
     </div>
   </main>

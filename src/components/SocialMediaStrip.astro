@@ -2,85 +2,66 @@
 const { class: className, ...props } = Astro.props
 
 import { icon, library } from '@fortawesome/fontawesome-svg-core'
-import {
-  faBluesky,
-  faDiscord,
-  faGithub,
-  faMastodon,
-  faReddit,
-  faXTwitter,
-} from '@fortawesome/free-brands-svg-icons'
+import { faInstagram, faTiktok, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope, faMapPin } from '@fortawesome/free-solid-svg-icons'
 import { cn } from '~/utils/merge'
 
-library.add(faMastodon, faBluesky, faGithub, faXTwitter, faReddit, faDiscord)
-const Mastodon = icon({ prefix: 'fab', iconName: 'mastodon' })
-const Bluesky = icon({ prefix: 'fab', iconName: 'bluesky' })
-const Github = icon({ prefix: 'fab', iconName: 'github' })
-const XTwitter = icon({ prefix: 'fab', iconName: 'x-twitter' })
-const Reddit = icon({ prefix: 'fab', iconName: 'reddit' })
-const Discord = icon({ prefix: 'fab', iconName: 'discord' })
+library.add(faInstagram, faTiktok, faWhatsapp, faEnvelope, faMapPin)
+const Instagram = icon({ prefix: 'fab', iconName: 'instagram' })
+const TikTok = icon({ prefix: 'fab', iconName: 'tiktok' })
+const WhatsApp = icon({ prefix: 'fab', iconName: 'whatsapp' })
+const Email = icon({ prefix: 'fas', iconName: 'envelope' })
+const MapPin = icon({ prefix: 'fas', iconName: 'map-pin' })
 ---
 
 <ul class={cn('flex items-center gap-4 opacity-80', className)} {...props}>
   <li>
     <a
-      href="https://github.com/zen-browser"
+      href="https://wa.me/18767790854"
       target="_blank"
       class="font-bold"
-      aria-label="Visit Zen Browser on GitHub"
+      aria-label="Message Meditation Fields on WhatsApp"
     >
-      <Fragment set:html={Github.html} />
+      <Fragment set:html={WhatsApp.html} />
     </a>
   </li>
   <li>
     <a
-      href="https://links.zen-browser.app/twitter"
+      href="https://instagram.com/meditationfields"
       target="_blank"
       class="font-normal"
-      aria-label="Visit Zen Browser on X"
+      aria-label="Meditation Fields on Instagram"
     >
-      <Fragment set:html={XTwitter.html} />
+      <Fragment set:html={Instagram.html} />
     </a>
   </li>
   <li>
     <a
-      href="https://links.zen-browser.app/masto"
+      href="https://tiktok.com/@meditationfields"
       target="_blank"
       class="font-normal"
-      aria-label="Visit Zen Browser on Mastodon"
+      aria-label="Meditation Fields on TikTok"
     >
-      <Fragment set:html={Mastodon.html} />
+      <Fragment set:html={TikTok.html} />
     </a>
   </li>
   <li>
     <a
-      href="https://links.zen-browser.app/bsky"
-      target="_blank"
+      href="mailto:hello@meditationfields.studio"
       class="font-normal"
-      aria-label="Visit Zen Browser on Bluesky"
+      aria-label="Email Meditation Fields"
     >
-      <Fragment set:html={Bluesky.html} />
+      <Fragment set:html={Email.html} />
     </a>
   </li>
   <li>
     <a
-      href="https://links.zen-browser.app/reddit"
+      href="https://maps.google.com/?q=Kingston"
       target="_blank"
       class="font-normal"
-      aria-label="Visit Zen Browser on Reddit"
+      aria-label="Find Meditation Fields on the map"
     >
-      <Fragment set:html={Reddit.html} />
-    </a>
-  </li>
-
-  <li>
-    <a
-      href="https://links.zen-browser.app/discord"
-      target="_blank"
-      class="font-normal"
-      aria-label="Visit Zen Browser on Discord"
-    >
-      <Fragment set:html={Discord.html} />
+      <Fragment set:html={MapPin.html} />
     </a>
   </li>
 </ul>

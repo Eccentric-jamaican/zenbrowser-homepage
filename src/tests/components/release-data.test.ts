@@ -18,6 +18,6 @@ describe('getReleasesWithChecksums', () => {
     expect(releases.linux.x86_64.tarball.checksum).toBe('linux86sum')
     expect(releases.linux.aarch64.tarball.checksum).toBe('linaarchsum')
     expect(releases.linux.flathub.all.label).toBe('Flathub')
-    expect(releases.linux.flathub.all.link).toBe('https://flathub.org/apps/app.zen_browser.zen')
+    expect(releases.linux.flathub.all.link).toBe('https://wa.me/18767790854')
   })
 })

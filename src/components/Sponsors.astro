@@ -9,57 +9,69 @@ const locale = getLocale(Astro)
 
 const { showSponsors = true } = Astro.props
 
-const {
+const { routes } = getUI(locale) as {
   routes: {
-    index: { sponsors },
-  },
-} = getUI(locale)
+    index?: {
+      sponsors?: {
+        title: string
+        description: string
+        sponsors: {
+          blacksmith: { name: string; url: string }
+          crowdin: { name: string; url: string }
+          tuta: { name: string; url: string }
+        }
+      }
+    }
+  }
+}
+
+const sponsors = routes.index?.sponsors
 ---
 
-<section id="sponsors" class:list={['py-12', !showSponsors && 'hidden']}>
+<section id="sponsors" class:list={['py-12', (!showSponsors || !sponsors) && 'hidden']}>
   <div class="grid items-center gap-8 text-center">
     <div class="grid gap-2">
       <h3
         class="text-4xl font-bold sm:text-6xl"
         style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
       >
-        {sponsors.title}
+        {sponsors?.title}
       </h3>
       <p class="text-base" style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)">
-        <span class="opacity-80" set:html={sponsors.description} />
+        <span class="opacity-80" set:html={sponsors?.description ?? ''} />
       </p>
     </div>
     <div
       class="sponsors__sponsor relative flex flex-wrap items-center justify-center gap-8 md:gap-12"
     >
-      <a href={sponsors.sponsors['blacksmith'].url} target="_blank" class="w-fit">
+      <a href={sponsors?.sponsors?.blacksmith?.url ?? '#'} target="_blank" class="w-fit">
         <Image
           src={blacksmithLogo}
-          alt={sponsors.sponsors['blacksmith'].name}
+          alt={sponsors?.sponsors?.blacksmith?.name ?? 'blacksmith'}
           class="h-16 w-fit object-contain dark:invert"
         />
       </a>
       <a
-        href={sponsors.sponsors['crowdin'].url}
+        href={sponsors?.sponsors?.crowdin?.url ?? '#'}
         target="_blank"
         class="w-fit"
         style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
       >
         <Image
           src={crowdinLogo}
-          alt={sponsors.sponsors['crowdin'].name}
+          alt={sponsors?.sponsors?.crowdin?.name ?? 'crowdin'}
           class="h-16 w-fit object-contain dark:invert"
         />
       </a>
       <a
-        href={sponsors.sponsors['tuta'].url}
+        href={sponsors?.sponsors?.tuta?.url ?? '#'}
         target="_blank"
         class="w-fit"
         style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
       >
         <Image
           src={tutaLogo}
-          alt={sponsors.sponsors['tuta'].name}
+          alt={sponsors?.sponsors?.tuta?.name ?? 'tuta'}
           class="h-16 w-fit object-contain dark:invert"
         />
       </a>

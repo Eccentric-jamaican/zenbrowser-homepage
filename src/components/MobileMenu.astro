@@ -41,27 +41,6 @@ const {
   </div>
   <nav class="px-4 py-2">
     <ul class="space-y-4">
-      <!-- Getting Started Links -->
-      <li>
-        <div class="mb-2 font-bold">{menu.gettingStarted}</div>
-        <ul class="ml-4 space-y-2">
-          <li>
-            <a href={getLocalePath('/mods')} class="block text-dark hover:text-coral"
-              >{menu.zenMods}</a
-            >
-          </li>
-          <li>
-            <a href={getLocalePath('/release-notes')} class="block text-dark hover:text-coral"
-              >{menu.releaseNotes}</a
-            >
-          </li>
-          <li>
-            <a href="https://discord.gg/zen-browser" class="block text-dark hover:text-coral"
-              >{menu.discord}</a
-            >
-          </li>
-        </ul>
-      </li>
       <!-- Useful Links -->
       <li>
         <div class="mb-2 font-bold">{menu.usefulLinks}</div>
@@ -77,27 +56,15 @@ const {
             >
           </li>
           <li>
-            <a href="https://docs.zen-browser.app" class="block text-dark hover:text-coral"
+            <a href="https://maps.google.com/?q=Kingston" class="block text-dark hover:text-coral"
               >{menu.documentation}</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://github.com/zen-browser"
-              target="_blank"
-              class="block text-dark hover:text-coral">{menu.github}</a
             >
           </li>
         </ul>
       </li>
       <!-- Extra Links -->
       <li>
-        <a href={getLocalePath('/mods')} class="block font-bold text-dark hover:text-coral"
-          >{menu.mods}</a
-        >
-      </li>
-      <li>
-        <a href={getLocalePath('/download')} class="block font-bold text-dark hover:text-coral"
+        <a href={getLocalePath('/contact')} class="block font-bold text-dark hover:text-coral"
           >{menu.download}</a
         >
       </li>

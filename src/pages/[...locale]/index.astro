@@ -2,7 +2,9 @@
 import Community from '~/components/Community.astro'
 import Features from '~/components/Features.astro'
 import Hero from '~/components/Hero.astro'
-import Sponsors from '~/components/Sponsors.astro'
+import MotionEnhancer from '~/components/MotionEnhancer'
+import Pricing from '~/components/Pricing.astro'
+import Therapist from '~/components/Therapists.astro'
 import Layout from '~/layouts/Layout.astro'
 import { getLocale, getUI } from '~/utils/i18n'
 export { getStaticPaths } from '~/utils/i18n'
@@ -16,9 +18,11 @@ const { layout } = getUI(locale)
   <main class="container">
     <Hero />
     <Features />
-    <Sponsors showSponsors />
     <Community />
+    <Therapist />
+    <Pricing />
   </main>
+  <MotionEnhancer client:idle />
 </Layout>
 <style>
   @keyframes headerSlideIn {

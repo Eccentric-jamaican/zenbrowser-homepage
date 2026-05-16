@@ -1,169 +1,188 @@
 {
   "routes": {
     "index": {
-      "title": "Zen Browser",
+      "title": "Meditation Fields — Massage Therapy in Kingston",
       "hero": {
         "title": [
-          { "text": "welcome ", "highlight": false },
-          { "text": "to ", "highlight": false },
+          { "text": "Fall ", "highlight": false },
+          { "text": "into ", "highlight": false },
           { "text": "\n", "highlight": false },
-          { "text": "a ", "highlight": false },
-          { "text": "calmer ", "highlight": true },
-          { "text": "internet", "highlight": false }
+          { "text": "rest", "highlight": true },
+          { "text": "", "highlight": false }
         ],
         "description": [
-          "Beautifully designed, privacy-focused, and packed with features.",
-          "We care about your experience, not your data."
+          "Massage therapy for people who need their body and mind to exhale.",
+          "Swedish, Thai, deep tissue & trigger-point therapy in Kingston."
         ],
         "buttons": {
-          "beta": "Beta is now available!",
-          "support": "Support Us ❤️"
+          "beta": "Book on WhatsApp",
+          "support": "View Services"
         }
       },
       "features": {
-        "titles": ["Productivity ", "at ", "its best"],
-        "description": "Zen is packed with features that help you stay productive and focused. Browsers should be tools that help you get things done, not distractions that keep you from your work.",
+        "titles": ["Care for ", "bodies that ", "carry pain."],
+        "description": "Massage is maintenance, not luxury. Whether pain is limiting your sleep, your work, your mobility, or a parent's day-to-day comfort, we begin with the body in front of us.",
         "featureTabs": {
-          "workspaces": {
-            "title": "Workspaces",
-            "description": "Organize your tabs into Workspaces to keep your projects separate and organized, and switch between them with ease."
+          "deepTissue": {
+            "title": "Deep Tissue",
+            "description": "Slow, focused pressure that releases stubborn knots in the back, shoulders, and hips. Ideal for desk-bound professionals and chronic tension."
           },
-          "compactMode": {
-            "title": "Compact Mode",
-            "description": "Zen's Compact Mode gives you more screen real estate by hiding the tab bar when you don't need it, and showing it when you do."
+          "swedish": {
+            "title": "Swedish Relaxation",
+            "description": "A gentle, full-body unwind. Long flowing strokes to calm the nervous system and ease everyday stress."
           },
-          "glance": {
-            "title": "Glance",
-            "description": "Glance allows you to quickly switch between your most used tabs, without having to scroll through your history."
+          "thai": {
+            "title": "Thai Therapy",
+            "description": "Assisted stretching and rhythmic compression to restore mobility — particularly helpful for stiff joints and ageing bodies."
           },
-          "splitView": {
-            "title": "Split View",
-            "description": "Split View allows you to view two tabs side by side, making it easier to compare and switch between them."
+          "triggerPoint": {
+            "title": "Trigger-Point",
+            "description": "Targeted relief for headaches, sciatica, and ailments that won't quit. We work with referred-pain maps, not guesswork."
           }
         }
       },
-      "sponsors": {
-        "title": "Our Sponsors",
-        "description": "We are grateful to our sponsors for their support. They help us to keep the project alive.<br />You can also be part of this journey by <a href=\"/donate\" class=\"zen-link\">donating to us directly</a>!",
-        "sponsors": {
-          "tuta": {
-            "name": "Tuta",
-            "url": "https://tuta.com/"
+      "therapist": {
+        "eyebrow": "Meet the therapist",
+        "title": ["The hands ", "behind ", "the work."],
+        "name": "Garfield Malcom",
+        "role": "Lead Therapist · Deep Tissue & Trigger-Point",
+        "years": "12 yrs in practice",
+        "initials": "GM",
+        "image": {
+          "src": "/therapist.png",
+          "alt": "Portrait of Garfield Malcom"
+        },
+        "bio": [
+          "I have spent the last twelve years working with bodies that don't get to slow down — desk-bound professionals, parents in the middle of it all, and elders carrying decades of accumulated tension.",
+          "My practice is unhurried and clinical. I listen before I touch, work with referred-pain maps instead of guesswork, and tailor every session to the body actually on the table."
+        ],
+        "credentials": [
+          "LMT, RMT (Licensed)",
+          "Clinical Myofascial Release",
+          "Trigger-Point Therapy",
+          "Post-injury Rehab",
+          "Geriatric Bodywork"
+        ],
+        "stats": {
+          "experience": { "label": "Years in practice", "value": "12" },
+          "sessions": { "label": "Sessions delivered", "value": "50+" },
+          "modalities": { "label": "Modalities trained", "value": "4" }
+        },
+        "cta": "Book a session"
+      },
+      "pricing": {
+        "title": ["Pricing."],
+        "description": "No memberships. No upsells. Just minutes on the table.",
+        "tiers": {
+          "sixty": { "title": "60 min", "price": "$90", "subtitle": "Targeted session" },
+          "ninety": {
+            "title": "90 min",
+            "price": "$120",
+            "subtitle": "Most popular",
+            "featured": true
           },
-          "blacksmith": {
-            "name": "BlackSmith",
-            "url": "https://www.blacksmith.sh/"
-          },
-          "crowdin": {
-            "name": "Crowdin",
-            "url": "https://crowdin.com/"
-          }
+          "twenty": { "title": "120 min", "price": "$160", "subtitle": "Full reset" }
         }
       },
       "community": {
-        "title": ["Our ", "Core ", "Values"],
-        "description": "We make it not only a priority, but a necessity to ensure that Zen always strikes the right balance between beauty, performance, and privacy.",
+        "title": ["A visit that ", "doesn't rush ", "\n", "the body."],
+        "description": "The first session is intentionally simple: listen carefully, work within tolerance, then leave you with a clear sense of what helped and what to watch next.",
         "lists": {
           "freeAndOpenSource": {
-            "title": "Free and open-source",
-            "description": "Zen is free and open-source software, which means you can use it without any cost and can modify it to suit your needs."
+            "title": "Begin with the story",
+            "description": "We ask where the pain shows up, what aggravates it, and what daily movements have become harder."
           },
           "simpleYetPowerful": {
-            "title": "Simple yet powerful",
-            "description": "Zen is simple to use, but powerful enough to handle your daily tasks."
+            "title": "Work within tolerance",
+            "description": "Pressure, positioning, and pace stay responsive to age, sensitivity, medication, and mobility."
           },
           "privateAndAlwaysUpToDate": {
-            "title": "Private and always up-to-date",
-            "description": "Zen is private and always up-to-date, which means you can use it without any cost and can modify it to suit your needs."
+            "title": "Leave with direction",
+            "description": "You will know what areas responded, when to return, and what simple habits may help between visits."
           }
         },
-        "images": {
-          "community": {
-            "alt": "Community"
-          }
-        }
+        "images": { "community": { "alt": "Calm treatment room" } }
       }
     },
     "mods": {
-      "title": "Zen Mods",
-      "description": "Browse our diverse collection of Zen Mods, community-made plugins and themes for Zen Browser. Discover a theme to match every mood, and a plugin to fulfill every requirement. Start customizing your browser experience today!",
+      "title": "Services",
+      "description": "Explore what Meditation Fields offers: hands-on sessions for release, mobility, and recovery in Kingston.",
       "pagination": {
         "pagination": "{input} of {totalPages} ({totalItems} items)"
       },
-      "search": "Type to search...",
-      "by": "by",
+      "search": "Search services...",
+      "by": "By",
       "sort": {
-        "lastCreated": "Last created",
-        "lastUpdated": "Last updated",
+        "lastCreated": "Newest",
+        "lastUpdated": "Updated",
         "perPage": "Per page"
       },
-      "noResults": "No results found",
-      "noResultsDescription": "Try searching for a different term or check back later.",
+      "noResults": "No services found",
+      "noResultsDescription": "Try another search term or check back for new appointments.",
       "slug": {
-        "title": "{name} - Zen Mods",
-        "description": "Learn more about {name} mod available on Zen Browser",
+        "title": "{name} - Service",
+        "description": "Learn more about the {name} service and who it is for.",
         "alert": {
-          "description": "You need to have Zen Browser installed to install this theme.",
-          "button": "Download now!"
+          "description": "To book this service, use our booking message link.",
+          "button": "Book now"
         },
         "createdBy": "Created by {author} • <b>v{version}</b>",
-        "creationDate": "Creation date: <b>{createdAt}</b>",
-        "latestUpdate": "Latest update: <b>{updatedAt}</b>",
-        "visitModHomepage": "Visit mod homepage",
-        "installMod": "Install Mod 🎉",
-        "uninstallMod": "Uninstall Mod",
+        "creationDate": "Created: <b>{createdAt}</b>",
+        "latestUpdate": "Last updated: <b>{updatedAt}</b>",
+        "visitModHomepage": "Read treatment details",
+        "installMod": "Reserve this service 🎉",
+        "uninstallMod": "Cancel booking",
         "back": "Back"
       }
     },
     "releaseNotes": {
       "topSection": {
-        "title": "Changelog",
-        "description": "Stay up to date with the latest changes to Zen! Since the <a class=\"zen-link\" href=\"#1.0.0-a.1\">first release</a> till <a class=\"zen-link\" href=\"#{latestVersion}\">{latestVersion}</a>, we've been working hard to make Zen Browser the best it can be. Thanks everyone for your feedback! ❤️"
+        "title": "Studio Notes",
+        "description": "Check the latest studio updates, new services, and clinic announcements."
       },
       "list": {
-        "support": "Give us some support!",
-        "navigateToVersion": "Navigate to version..."
+        "support": "Support our studio",
+        "navigateToVersion": "Jump to update"
       },
       "itemType": {
-        "fix": "Fixed",
-        "feature": "Added",
-        "known": "Known",
-        "break": "Breaking",
-        "theme": "Theme",
-        "security": "Security",
+        "fix": "Update",
+        "feature": "New",
+        "known": "Reminder",
+        "break": "Important",
+        "theme": "Service",
+        "security": "Care",
         "change": "Change"
       },
       "backToTop": "Back to the top",
-      "chooseVersion": "Choose version",
+      "chooseVersion": "Choose update",
       "components": {
         "releaseNoteItem": {
-          "twilight": "Twilight",
-          "twilightChanges": "Twilight changes",
-          "releaseChanges": "v{version}",
-          "firefoxVersion": "Firefox {version}",
-          "githubRelease": "GitHub Release",
+          "twilight": "Special",
+          "twilightChanges": "Special note",
+          "releaseChanges": "Update {version}",
+          "githubRelease": "Release summary",
           "workflowRun": "Workflow run",
           "compareChanges": "Compare changes",
-          "twilightWarning": "Please note that Twilight is a pre-release version of Zen Browser. It may contain bugs and unfinished features.",
-          "reportIssues": " If you encounter any issues, please report them on <a rel=\"noopener noreferrer\" target=\"_blank\" href=\"https://github.com/zen-browser/desktop/issues/\" class=\"zen-link\">the issues page</a>.",
+          "twilightWarning": "Some updates are in preview and may change before final posting.",
+          "reportIssues": " If you have questions, contact us on our help channel.",
           "learnMore": "Learn more",
-          "viewIssue": "View issue number {issue} on GitHub"
+          "viewIssue": "Reference {issue}"
         }
       },
       "slug": {
-        "title": "Release notes",
-        "redirect": "Redirecting to release notes for version {version}..."
+        "title": "Studio updates",
+        "redirect": "Redirecting to update details for {version}..."
       }
     },
     "about": {
-      "title": "About Zen",
-      "description": "We are simply a group of developers and designers who care about your experience on the web. We believe that the internet should be a place where you can explore, learn, and connect without worrying about your data being collected.",
-      "littleHelp": "A little help?",
+      "title": "About Meditation Fields",
+      "description": "Meditation Fields is a gentle wellness studio in Kingston focused on restorative massage and restorative movement.",
+      "littleHelp": "Learn more?",
       "mainTeam": {
         "title": "Main Team",
-        "description": "This list shows the main team members who are working hard to bring you the best browsing experience.",
+        "description": "This list shows the main team members who care for every treatment and support experience.",
         "subTitle": {
-          "browser": "Browser",
+          "browser": "Treatment Team",
           "website": "Website and Branding"
         },
         "members": {
@@ -250,52 +269,83 @@
       },
       "contributors": {
         "title": "Contributors",
-        "description": "This list shows the contributors who have helped us to make Zen Browser the best it can be.",
-        "browser": "Browser",
-        "website": "Website"
+        "description": "Thank you to everyone who supports our studio and helps us deliver consistent care.",
+        "browser": "Team",
+        "website": "Community"
       }
     },
     "donate": {
-      "title": "Donate",
-      "description": "We are a small team of developers working hard to bring you the best browsing experience. If you like what we do, please consider supporting us.",
+      "title": "Gift Cards",
+      "description": "Gift healing time or support the studio in a way that fits you.",
       "patreon": {
-        "title": "Patreon",
-        "description": "Patreon allows you to support us with a monthly donation. You can choose the level of support that works best for you.",
-        "button": "Go to Patreon"
+        "title": "Gift a session",
+        "description": "Reserve a wellness gift card and share the gift of recovery.",
+        "button": "Book by WhatsApp"
       },
       "koFi": {
-        "title": "Ko-fi",
-        "description": "Ko-fi allows you to support us with a one-time donation. You can choose the amount that works best for you. Monthly donations are also available.",
-        "button": "Go to Ko-fi"
+        "title": "Support via gift card",
+        "description": "Prefer a quick purchase? Reserve your gift card directly with our team.",
+        "button": "Book now"
+      }
+    },
+    "mods": {
+      "title": "Services",
+      "description": "Explore what Meditation Fields offers: hands-on sessions for relief, mobility, and recovery in Kingston.",
+      "pagination": {
+        "pagination": "{input} of {totalPages} ({totalItems} items)"
+      },
+      "search": "Search services...",
+      "by": "By",
+      "sort": {
+        "lastCreated": "Newest",
+        "lastUpdated": "Updated",
+        "perPage": "Per page"
+      },
+      "noResults": "No services found",
+      "noResultsDescription": "Try another search term or check back for new appointments.",
+      "slug": {
+        "title": "{name} - Service",
+        "description": "Learn more about the {name} service and who it is for.",
+        "alert": {
+          "description": "To book this service, use our booking message link.",
+          "button": "Book now"
+        },
+        "createdBy": "Created by {author} • <b>v{version}</b>",
+        "creationDate": "Created: <b>{createdAt}</b>",
+        "latestUpdate": "Last updated: <b>{updatedAt}</b>",
+        "visitModHomepage": "Read treatment details",
+        "installMod": "Reserve this service 🎉",
+        "uninstallMod": "Cancel booking",
+        "back": "Back"
       }
     },
     "download": {
-      "title": "Start your journey",
-      "description": "Download Zen for your platform and experience a more mindful internet browsing experience.<br/>Zen is available for macOS, Windows, and Linux.",
-      "twilightInfo": "You're currently in Twilight mode, this means you're downloading the latest experimental features and updates.",
-      "beta": "Zen is currently in ",
-      "otherDownload": "If your device has been wrongly detected, <a href='https://github.com/zen-browser/desktop/releases/latest/' class='zen-link'>see other downloads</a>.<br />Please report any issues you encounter on <a href='https://github.com/zen-browser/desktop/issues/new/choose' class='zen-link ml-[1px]'>GitHub</a>.",
+      "title": "Book an appointment",
+      "description": "Reserve your next therapy session and choose the treatment that matches your needs.",
+      "twilightInfo": "You can message us directly to finalize your booking details.",
+      "beta": "Ready to book?",
+      "otherDownload": "Prefer to message us directly? <a href='https://wa.me/18767790854' class='zen-link'>Open WhatsApp</a>",
       "alertInfo": {
-        "description": "You're currently in Twilight mode, this means you're downloading the latest experimental features and updates."
+        "description": "If you need faster support, message us on WhatsApp."
       },
       "platformSelector": {
-        "title": "Platform Selector",
-        "description": "Select your platform to download Zen."
+        "title": "How to book",
+        "description": "Use our WhatsApp booking line to choose a date and treatment type."
       },
       "additionalResources": {
-        "title": "Additional Resources",
+        "title": "Need to know first",
         "sourceCode": {
-          "title": "Source Code",
-          "description": "Explore Zen's source code on GitHub. Contribute to the project or build your own version."
+          "title": "Booking details",
+          "description": "Share your preferred date, duration, and any areas of concern in your first message."
         },
         "documentation": {
-          "title": "Documentation",
-          "description": "Access comprehensive documentation, guides, and tutorials for Zen."
+          "title": "Studio policies",
+          "description": "Review our visit rules, cancellation windows, and what to expect at your first session."
         }
       },
       "securityNotice": {
-        "title": "Verified & Secure Downloads",
-        "description": "All Zen downloads are signed and verified for your security. We recommend downloading directly from our official website or GitHub repository. If your download seems broken or gets flagged by your antivirus, please <a href='https://github.com/zen-browser/desktop/issues/new/choose' class='zen-link ml-1'>report it to us</a>."
+        "title": "Private, direct booking",
+        "description": "You can message us privately to finalize details. No app downloads required; just a WhatsApp confirmation."
       },
       "platformNames": {
         "mac": "macOS",
@@ -328,102 +378,103 @@
       "sections": {
         "introduction": {
           "title": "Introduction",
-          "body": "Welcome to Zen! Your privacy is our priority. This Privacy Policy outlines the types of personal information we collect, how we use it, and the steps we take to protect your data when you use Zen.",
+          "body": "Welcome to Meditation Fields. Your privacy is our priority. This privacy policy explains what information we collect, how it is used, and how we protect it.",
           "summary": "We don't sell data - We don't collect data - We don't track you"
         },
         "noCollect": {
           "title": "1. Information We Do Not Collect",
-          "body": "Zen is designed with privacy in mind. We do not collect, store, or share any of your personal data. Here's what that means:"
+          "body": "Meditation Fields is designed with privacy in mind. We do not collect, store, or share personal data as part of booking and treatment scheduling. Here's what that means:"
         },
         "noTelemetry": {
           "title": "1.1. No Telemetry",
-          "body": "We do not collect any telemetry data or crash reports.",
-          "body2": "Zen has stripped out telemetry built into Mozilla Firefox. We have removed all telemetry data collection and crash reports."
+          "body": "We do not collect telemetry data or crash reports through the website or booking process.",
+          "body2": "No background telemetry or crash reporting is used for bookings or content display."
         },
         "noPersonalData": {
           "title": "1.2. No Personal Data Collection",
-          "body": "Zen does not collect any personal information such as your IP address, browsing history, search queries, or form data."
+          "body": "We do not collect any personal information such as your IP address, browsing history, search queries, or form data through this site."
         },
         "noThirdParty": {
           "title": "1.3. No Third-Party Tracking",
-          "body": "We do not allow third-party trackers or analytics tools to operate within Zen. Your browsing activity remains entirely private and is not shared with any third party. Mozilla is not considered a third party as it is the base of Zen."
+          "body": "We do not allow third-party trackers or analytics tools to operate within Meditation Fields. Your session activity is not shared with any third-party advertising networks or analytics providers."
         },
         "externalConnections": {
           "title": "1.4. External connections made at startup",
-          "body": "Zen may make external connections at startup to check for updates and ensure the browser is up to date on plugins, addons, check for connectivity and Geolocation/push notifications services in order to comply with web standards. We, at Zen, do not collect any data from these connections, but they may be logged by third-party services or websites you visit. These connections are necessary for the proper functioning of the browser and are not used for tracking or profiling purposes. They can be disabled through the browser flags (about:config)."
+          "body": "Some service calls may occur to deliver pages and basic delivery/security utilities. We do not create profiles from these requests, and they are not used for targeted advertising."
         },
         "localStorage": {
           "title": "2. Information Stored Locally on Your Device"
         },
         "browsingData": {
           "title": "2.1. Browsing Data",
-          "body": "Zen stores certain data locally on your device to enhance your browsing experience. This includes:"
+          "body": "Meditation Fields stores only booking-related data locally on your device to improve your experience. This includes:"
         },
         "cookies": {
           "title": "Cookies",
-          "body": "Cookies are stored locally on your device and are not shared with Zen or any third party. You have full control over the management of cookies through the browser's settings."
+          "body": "Cookies are stored locally on your device and are not shared with Meditation Fields or any third party for advertising. You can manage cookies through your browser settings."
         },
         "cache": {
           "title": "Cache and Temporary Files",
-          "body": "Zen may store cache files and other temporary data locally to improve performance. These files can be cleared at any time through the browser's settings."
+          "body": "Temporary files are kept locally to keep pages loading quickly. You can clear them at any time in your browser settings."
         },
         "settings": {
           "title": "2.2. Settings and Preferences",
-          "body": "Any customizations, settings, and preferences you make within Zen are stored locally on your device. We do not have access to or control over this data."
+          "body": "Any settings and preferences you set in your browser are stored locally on your device. We do not have access to this data."
         },
         "sync": {
           "title": "3. Sync Feature",
-          "body": "Zen offers a \"Sync\" feature, which is implemented using Mozilla Firefox's Sync feature. This feature allows you to synchronize your bookmarks, history, passwords, and other data across multiple devices. For this feature to work, your data is encrypted and stored on Mozilla's servers and is treated in accordance with their Privacy Policy. We, at Zen, cannot view any of this data.",
-          "link1": "Mozilla Firefox Sync",
+          "body": "Meditation Fields does not currently offer any account sync across devices. If this changes, we will add clear controls and disclosures before activation.",
+          "link1": "Website Accessibility",
           "link2": "This is how we store your passwords"
         },
         "addons": {
-          "title": "4. Add-ons and \"Mods\"",
-          "body": "You can install Add-ons from addons.mozilla.org. Zen periodically checks for updates to these Add-ons.\nYou can also install \"Mods\" from zen-browser.app/mods. These Mods are hosted by our services and follow the same privacy policy our website. We do not collect any data from these Mods, they are purely static content that is downloaded to your device."
+          "title": "4. Services and Extras",
+          "body": "You may browse optional treatment descriptions and educational resources. These pages are hosted as static content for this site and do not require account sign-in."
         },
         "security": {
           "title": "5. Data Security",
-          "body": "Although Zen does not collect your data, we are committed to protecting the information that is stored locally on your device and, if you use the Sync feature, the encrypted data stored on Mozilla's servers. We recommend that you use secure passwords, enable device encryption, and regularly update your software to ensure your data remains safe.",
-          "note": "Note that most of the security measures are taken care by Mozilla Firefox."
+          "body": "Although we do not run a full data platform, we secure the information needed for contact and scheduling. Use secure passwords for your device and keep your system up to date.",
+          "note": "If we ever add more digital records, they will use encrypted transport and secure storage by default."
         },
         "control": {
           "title": "6. Your Control",
           "deletionTitle": "6.1. Data Deletion",
-          "deletionBody": "You have full control over all data stored locally on your device by Zen. You can clear your browsing data, cookies, and cache at any time using the browser's settings."
+          "deletionBody": "You have full control over all data stored locally on your device. You can clear your browser data, cookies, and cache at any time using your browser settings."
         },
         "website": {
           "title": "7. Our Website and Services",
-          "body": "Zen's website and services do not use any third-party analytics, tracking, or CDN services. We do not collect any personal information from users visiting our website. The website is hosted on Cloudflare but with analytics and tracking disabled, Cloudflare may collect some analytics data from HTTP requests in order to provide security and performance improvements. However, this data is not linked to any personal information and is not used for tracking purposes.",
+          "body": "Meditation Fields' website and services do not use third-party advertising analytics or tracking. The website may be hosted by infrastructure providers for reliability and security; those providers may receive limited technical metadata.",
           "externalLinksTitle": "7.1. External links",
-          "externalLinksBody": "Zen may contain links to external websites or services that are not owned or operated by us. We are not responsible for the content or privacy practices of these sites. We recommend that you review the privacy policies of these sites before providing them with any personal information."
+          "externalLinksBody": "Our site may contain links to external websites or services we use. We are not responsible for their policies. Please review each site's privacy policy before sharing personal information there."
         },
         "changes": {
           "title": "8. Changes to This Privacy Policy",
-          "body": "We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any significant changes by updating the effective date at the top of this policy. Continued use of Zen after such changes constitutes your acceptance of the new terms."
+          "body": "We may update this Privacy Policy over time to reflect changes in our practices or legal requirements. We will update the effective date at the top of this policy when changes are significant. Continued use after the update means you accept the new terms."
         },
         "otherTelemetry": {
-          "title": "9. Other telemetry done by Mozilla Firefox",
-          "body": "We try to disable all telemetry data collection in Zen. But, we may have missed some. Check the below links for more information.",
-          "firefoxPrivacyNotice": "Firefox Privacy Notice",
-          "forMoreInformation": "for more information."
+          "title": "9. External services and technical disclosures",
+          "body": "We aim to keep telemetry and non-essential background activity disabled. If you want more details about site-level disclosures, review the notes below.",
+          "linkPrefix": "Please check ",
+          "servicesNotice": "our website and services notes",
+          "forMoreInformation": " for more information."
         },
         "contact": {
           "title": "10. Contact Us",
-          "body": "If you have any questions or concerns about this Privacy Policy or Zen, please contact us at:",
-          "discord": "Discord: ",
-          "discordLink": "Zen's Discord",
-          "github": "GitHub: ",
-          "githubLink": "Organization"
+          "body": "If you have any questions or concerns about this privacy policy, please contact us at:",
+          "discord": "WhatsApp: ",
+          "discordLink": "Meditation Fields",
+          "github": "Email: ",
+          "githubLink": "hello@meditationfields.com"
         }
       }
     },
     "welcome": {
-      "title": ["Welcome ", "to ", "Zen!"]
+      "title": ["Welcome ", "to ", "Meditation Fields!"]
     },
     "whatsNew": {
-      "title": "What's New in {latestVersion.version}!",
-      "reportIssue": "Report an issue",
-      "joinDiscord": "Join our Discord",
+      "title": "What's new for {latestVersion.version}!",
+      "reportIssue": "Have a question?",
+      "joinDiscord": "Message us on WhatsApp",
       "readFullReleaseNotes": "Read the full release notes"
     },
     "notFound": {
@@ -434,36 +485,36 @@
   },
   "layout": {
     "index": {
-      "title": "Zen Browser",
-      "description": "Beautifully designed, privacy-focused, and packed with features."
+      "title": "Meditation Fields — Massage Therapy in Kingston",
+      "description": "Massage therapy for people who need their body and mind to exhale. Swedish, Thai, deep tissue, and trigger-point therapy in Kingston."
     },
     "mods": {
-      "title": "Zen Mods",
-      "description": "Browse our diverse collection of Zen Mods, community-made plugins and themes for Zen. Discover a theme to match every mood, and a plugin to fulfill every requirement. Start customizing your browser experience today!"
+      "title": "Services",
+      "description": "Explore our treatment menu, designed for stress relief and mobility-focused care in Kingston."
     },
     "releaseNotes": {
-      "title": "Release notes - Zen",
-      "description": "Stay up to date with the latest changes to Zen! Since the first release till {latestVersion}, we've been working hard to make Zen the best it can be. Thanks everyone for your feedback! ❤️"
+      "title": "Studio updates",
+      "description": "See what has changed at Meditation Fields and stay informed on current offers."
     },
     "about": {
-      "title": "About Zen",
-      "description": "We are simply a group of developers and designers who care about your experience on the web. We believe that the internet should be a place where you can explore, learn, and connect without worrying about your data being collected."
+      "title": "About us",
+      "description": "We are certified therapists and bodyworkers committed to restorative and attentive massage in Kingston."
     },
     "donate": {
-      "title": "Donate - Zen",
-      "description": "We are a small team of developers working hard to bring you the best browsing experience. If you like what we do, please consider supporting us."
+      "title": "Gift Cards",
+      "description": "Support our studio and offer a restorative gift to someone you care about."
     },
     "download": {
-      "title": "Download - Zen",
-      "description": "Download Zen for your platform and experience a more mindful internet browsing experience."
+      "title": "Book an appointment",
+      "description": "Reserve your preferred treatment and confirm your details directly with our team."
     },
     "privacyPolicy": {
-      "title": "Privacy Policy - Zen",
-      "description": "Your privacy is our priority. This Privacy Policy outlines the types of personal information we collect, how we use it, and the steps we take to protect your data when you use Zen."
+      "title": "Privacy Policy",
+      "description": "We keep only the data required to help you book and receive your treatment."
     },
     "welcome": {
       "title": "Welcome!",
-      "description": "Welcome to Zen!"
+      "description": "Welcome to Meditation Fields"
     },
     "whatsNew": {
       "title": "What's New in {latestVersion.version}!"
@@ -471,47 +522,47 @@
   },
   "components": {
     "footer": {
-      "title": "Zen Browser",
-      "description": "Beautifully designed, privacy-focused, and packed with features. We care about your experience, not your data.",
-      "download": "Download",
+      "title": "Meditation Fields",
+      "description": "Massage therapy for people who need their body and mind to exhale. Located in Kingston.",
+      "download": "Book appointment",
       "followUs": "Follow Us",
-      "aboutUs": "About Us",
-      "teamAndContributors": "Team & Contributors",
+      "aboutUs": "Studio",
+      "teamAndContributors": "About & Therapists",
       "privacyPolicy": "Privacy Policy",
-      "getStarted": "Get Started",
-      "documentation": "Documentation",
-      "zenMods": "Zen Mods",
-      "releaseNotes": "Release Notes",
-      "getHelp": "Get Help",
-      "securtiy": "Security",
-      "discord": "Discord",
-      "uptimeStatus": "Uptime Status",
-      "reportAnIssue": "Report an Issue",
-      "twilight": "Twilight",
-      "madeWith": "Made with <span aria-label='love'>❤️</span> by the <a href='{link}' class='zen-link inline-block font-bold'>Zen Team</a>"
+      "getStarted": "Book",
+      "documentation": "Pricing",
+      "zenMods": "Services",
+      "releaseNotes": "Pricing",
+      "getHelp": "Visit",
+      "securtiy": "Hours & Location",
+      "discord": "WhatsApp",
+      "uptimeStatus": "Instagram",
+      "reportAnIssue": "Contact",
+      "twilight": "Book online",
+      "madeWith": "Made with care in Kingston · <a href='{link}' class='zen-link inline-block font-bold'>Meditation Fields</a>"
     },
     "nav": {
-      "brand": "Zen Browser",
+      "brand": "Meditation Fields",
       "menu": {
-        "gettingStarted": "Getting Started",
-        "usefulLinks": "Useful Links",
-        "mods": "Mods",
-        "download": "Download",
-        "discord": "Discord",
-        "releaseNotes": "Release Notes",
-        "zenMods": "Zen Mods",
-        "tryZenMods": "Try Zen Mods",
-        "zenModsDesc": "Customize your browsing experience with Zen Mods.",
-        "releaseNotesDesc": "Stay up to date with the latest features and improvements.",
-        "discordDesc": "Join our community on Discord to chat with other Zen users!",
-        "donate": "Donate ❤️",
-        "donateDesc": "Support the development of Zen with a donation.",
-        "aboutUs": "About Us 🌟",
-        "aboutUsDesc": "Learn more about the team behind Zen.",
-        "documentation": "Documentation",
-        "documentationDesc": "Learn how to use Zen with our documentation.",
-        "github": "GitHub",
-        "githubDesc": "Contribute to the development of Zen on GitHub.",
+        "gettingStarted": "Treatments",
+        "usefulLinks": "Studio",
+        "mods": "Pricing",
+        "download": "Book appointment",
+        "discord": "WhatsApp",
+        "releaseNotes": "Packages",
+        "zenMods": "Services",
+        "tryZenMods": "View all services",
+        "zenModsDesc": "Swedish, Thai, deep tissue, and trigger-point therapy.",
+        "releaseNotesDesc": "Compare current package lengths and pricing.",
+        "discordDesc": "Quickest way to book — message us directly.",
+        "donate": "Gift Cards",
+        "donateDesc": "Give the gift of rest.",
+        "aboutUs": "About Me",
+        "aboutUsDesc": "Meet me and my approach.",
+        "documentation": "Hours & Location",
+        "documentationDesc": "Find us in Kingston.",
+        "github": "Reviews",
+        "githubDesc": "Read what clients say about us.",
         "menu": "Menu"
       }
     }

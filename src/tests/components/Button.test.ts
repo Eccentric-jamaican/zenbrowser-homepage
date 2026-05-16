@@ -54,7 +54,7 @@ describe('<Button />', () => {
       })
       expect(result).toContain('<a')
       expect(result).toContain('Go')
-      expect(result).toContain('href="/en/link"')
+      expect(result).toContain('href="/link"')
     })
 
     it.each([
@@ -92,11 +92,11 @@ describe('<Button />', () => {
     expect(result).toContain('custom-class')
   })
 
-  it('uses locale path for href', async () => {
+  it('uses default locale path for href', async () => {
     const result = await container.renderToString(Button, {
       props: { href: '/foo' },
       slots: { default: 'Test' },
     })
-    expect(result).toContain('href="/en/foo"')
+    expect(result).toContain('href="/foo"')
   })
 })

@@ -1,0 +1,221 @@
+---
+import { getLocale, getPath, getUI } from '~/utils/i18n'
+
+const locale = getLocale(Astro)
+const getLocalePath = getPath(locale)
+const {
+  routes: {
+    index: { therapist },
+  },
+} = getUI(locale)
+
+const stats = Object.values(therapist.stats) as { label: string; value: string }[]
+const hasImage = Boolean(therapist.image?.src)
+---
+
+<section
+  id="therapist"
+  data-motion-section
+  class="relative flex w-full flex-col py-12 text-start sm:py-16 lg:py-32"
+>
+  <!-- Heading -->
+  <div class="flex flex-col gap-4">
+    <p class="therapist-eyebrow text-xs uppercase tracking-[0.3em] text-coral">
+      {therapist.eyebrow}
+    </p>
+    <h2 class="max-w-3xl font-serif text-4xl font-medium leading-[1.05] sm:text-6xl">
+      {
+        therapist.title.map((part: string, i: number) => (
+          <span class="therapist-title-line" data-index={i}>
+            {part}
+          </span>
+        ))
+      }
+    </h2>
+  </div>
+
+  <!-- Spotlight: portrait + bio -->
+  <div class="mt-8 grid grid-cols-1 gap-8 sm:mt-12 md:grid-cols-12 md:gap-12">
+    <!-- Portrait column -->
+    <div class="therapist-portrait md:col-span-5" data-motion-item>
+      <figure
+        class="therapist-portrait-frame relative min-h-[28rem] w-full overflow-hidden rounded-3xl sm:min-h-[34rem] md:min-h-[38rem]"
+      >
+        {
+          hasImage ? (
+            <img
+              src={therapist.image.src}
+              alt={therapist.image.alt}
+              class="therapist-portrait-image relative z-20 h-full w-full object-contain object-bottom"
+              loading="lazy"
+              decoding="async"
+            />
+          ) : (
+            <div class="flex h-full w-full items-center justify-center">
+              <div class="relative flex flex-col items-center gap-4 text-center">
+                <div class="flex size-28 items-center justify-center rounded-full bg-paper text-olive shadow-sm ring-4 ring-paper">
+                  <span class="font-serif text-3xl font-medium">{therapist.initials}</span>
+                </div>
+              </div>
+            </div>
+          )
+        }
+      </figure>
+    </div>
+
+    <!-- Bio column -->
+    <div class="flex flex-col gap-6 md:col-span-7" data-motion-item>
+      <div class="therapist-role">
+        <p class="font-serif text-3xl font-medium">{therapist.name}</p>
+      </div>
+      <div class="therapist-role">
+        <span
+          class="inline-flex w-fit rounded-full bg-olive/10 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-olive"
+        >
+          {therapist.role}
+        </span>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        {
+          therapist.bio.map((para: string) => (
+            <p class="therapist-bio text-dark/75 max-w-2xl text-base leading-relaxed md:text-lg">
+              {para}
+            </p>
+          ))
+        }
+      </div>
+
+      <!-- Stats strip -->
+      <div
+        class="therapist-stats border-dark/10 mt-2 grid grid-cols-3 gap-2 border-t pt-5 sm:gap-3"
+        data-motion-item
+      >
+        {
+          stats.map((s, i) => (
+            <div
+              class:list={[
+                'flex min-w-0 flex-col gap-1 px-1 sm:px-2',
+                i !== stats.length - 1 && 'border-dark/10 border-r',
+              ]}
+            >
+              <p class="font-serif text-2xl font-medium leading-none sm:text-4xl">{s.value}</p>
+              <p class="text-dark/55 text-[10px] uppercase tracking-[0.14em] sm:text-[11px] sm:tracking-[0.18em]">
+                {s.label}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- CTA -->
+      <div class="therapist-cta mt-2" data-motion-item>
+        <a
+          href={getLocalePath('/contact')}
+          class="therapist-book-chip flex w-full items-center justify-center rounded-xl border border-white/30 bg-olive px-6 py-4 text-sm font-semibold text-paper transition-transform duration-150 hover:scale-[1.02] active:scale-[0.98] sm:w-fit"
+        >
+          {therapist.cta}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { animate, cubicBezier, stagger } from 'animejs'
+
+  const target = '#therapist'
+
+  animate(`${target} .therapist-eyebrow`, {
+    opacity: [0, 1],
+    translateY: [10, 0],
+    duration: 500,
+  })
+
+  animate(`${target} .therapist-title-line`, {
+    opacity: [0, 1],
+    translateY: [10, 0],
+    delay: stagger(120, { start: 100 }),
+    duration: 500,
+    ease: cubicBezier(0.25, 0.1, 0.25, 1),
+  })
+
+  animate(`${target} .therapist-portrait`, {
+    opacity: [0, 1],
+    translateY: [20, 0],
+    duration: 700,
+    delay: 300,
+    ease: cubicBezier(0.25, 0.1, 0.25, 1),
+  })
+
+  animate(`${target} .therapist-role`, {
+    opacity: [0, 1],
+    translateY: [10, 0],
+    delay: 400,
+    duration: 500,
+  })
+
+  animate(`${target} .therapist-bio`, {
+    opacity: [0, 1],
+    translateY: [10, 0],
+    delay: stagger(120, { start: 500 }),
+    duration: 500,
+  })
+
+  animate(`${target} .therapist-stats`, {
+    opacity: [0, 1],
+    translateY: [12, 0],
+    delay: 900,
+    duration: 500,
+  })
+
+  animate(`${target} .therapist-cta`, {
+    opacity: [0, 1],
+    translateY: [10, 0],
+    delay: 1000,
+    duration: 500,
+  })
+</script>
+
+<style>
+  .therapist-portrait-frame {
+    background:
+      radial-gradient(circle at 50% 18%, rgb(255 255 255 / 0.82), transparent 34%),
+      linear-gradient(160deg, rgb(221 235 211 / 0.72), rgb(246 224 210 / 0.44) 52%, transparent);
+    box-shadow: 0 20px 45px color-mix(in srgb, var(--zen-dark) 10%, transparent);
+  }
+
+  .therapist-portrait-frame::before {
+    content: '';
+    position: absolute;
+    inset: 12% 12% 8%;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--zen-olive) 16%, transparent);
+    filter: blur(22px);
+  }
+
+  .therapist-portrait-image {
+    transform: translateY(1.5rem) scale(1.06);
+    transform-origin: 50% 100%;
+    filter: drop-shadow(0 18px 22px color-mix(in srgb, var(--zen-dark) 18%, transparent));
+  }
+
+  .therapist-book-chip {
+    overflow: hidden;
+    background-image:
+      linear-gradient(145deg, rgb(255 255 255 / 0.14), transparent 42%),
+      linear-gradient(180deg, rgb(255 255 255 / 0.08), rgb(0 0 0 / 0.08));
+    box-shadow:
+      0 0 0 5px rgb(255 255 255 / 0.08),
+      0 12px 18px color-mix(in srgb, var(--zen-dark) 16%, transparent),
+      0 2px 4px color-mix(in srgb, var(--zen-dark) 12%, transparent),
+      inset 0 1px 0 rgb(255 255 255 / 0.28),
+      inset 0 -2px 4px rgb(0 0 0 / 0.1);
+  }
+
+  @media (max-width: 640px) {
+    .therapist-portrait-image {
+      transform: translateY(1rem) scale(1.03);
+    }
+  }
+</style>

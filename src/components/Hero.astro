@@ -1,112 +1,272 @@
 ---
-import Button from '~/components/Button.astro'
 import Title from '~/components/Title.astro'
 import ArrowRightIcon from '~/icons/ArrowRightIcon.astro'
-import { getLocale, getPath, getUI } from '~/utils/i18n'
-import SocialMediaStrip from './SocialMediaStrip.astro'
-import Video from './Video.astro'
+import { getLocale, getUI } from '~/utils/i18n'
 
 const locale = getLocale(Astro)
-
-const getLocalePath = getPath(locale)
 
 const {
   routes: {
     index: { hero },
   },
 } = getUI(locale)
+
+const whatsappHref =
+  'https://wa.me/18767790854?text=' +
+  encodeURIComponent("Hi Meditation Fields, I'd like to book a session.")
 ---
 
 <header
   id="header"
-  class="flex w-full flex-col items-center gap-6 py-16 text-center lg:gap-12 lg:py-32"
+  class="relative flex w-full flex-col items-center gap-8 py-12 text-center sm:py-16 lg:gap-16 lg:pb-12 lg:pt-28"
 >
-  <div class="flex h-full flex-col items-center justify-center gap-6 md:gap-8">
-    <div class="flex flex-col items-center justify-center gap-4 md:gap-8">
-      <div>
-        <Title class="relative px-12 text-center text-5xl md:text-7xl lg:px-0 lg:text-9xl">
-          {
-            hero.title.map(title =>
-              title.text !== '\n' ? (
-                <b
-                  class:list={['font-normal', title.highlight && 'italic text-coral']}
-                  style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
-                >
-                  {title.text}
-                </b>
-              ) : (
-                <br class="hidden md:block" />
-              )
+  <!-- Decorative hands art -->
+  <img
+    aria-hidden="true"
+    src="/hands.png"
+    alt=""
+    class="pointer-events-none absolute -left-12 top-8 hidden w-48 select-none object-contain lg:block"
+    loading="lazy"
+    decoding="async"
+  />
+  <div class="flex flex-col items-center justify-center gap-6 md:gap-10">
+    <div class="flex flex-col items-center justify-center gap-6 md:gap-8">
+      <Title
+        class="relative px-2 text-center font-serif text-5xl font-medium leading-[1.05] md:text-7xl lg:px-0 lg:text-[7.5rem]"
+      >
+        {
+          hero.title.map(title =>
+            title.text !== '\n' ? (
+              <b
+                class:list={['font-normal', title.highlight && 'serif italic text-coral']}
+                style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+              >
+                {title.text}
+              </b>
+            ) : (
+              <br class="hidden md:block" />
             )
-          }
-        </Title>
-        <p
-          class="px-12 text-center lg:px-0"
-          style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+          )
+        }
+      </Title>
+      <p
+        class="text-dark/75 max-w-2xl px-8 text-center text-base md:text-lg lg:px-0"
+        style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+      >
+        {hero.description[0]}
+        <br class="hidden sm:inline" />
+        {hero.description[1]}
+      </p>
+    </div>
+    <div
+      class="flex w-full max-w-xs flex-col items-stretch justify-center gap-3 sm:gap-4 md:w-fit md:max-w-none md:flex-row md:items-center"
+    >
+      <div
+        class="w-full md:w-fit"
+        style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+      >
+        <a
+          class="hero-chip hero-chip--primary flex w-full items-center justify-center gap-2 rounded-xl border border-white/30 bg-coral px-6 py-4 text-sm font-semibold text-paper transition-transform duration-150 hover:scale-[1.02] active:scale-[0.98] md:w-fit"
+          href={whatsappHref}
         >
-          {hero.description[0]}
-          <br class="hidden sm:inline" />
-          {hero.description[1]}
-        </p>
+          {hero.buttons.beta}
+          <ArrowRightIcon class="size-4" />
+        </a>
       </div>
       <div
-        class="flex w-2/3 flex-col items-center justify-center gap-3 sm:gap-6 md:w-fit md:flex-row"
+        class="w-full md:w-fit"
+        style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
       >
-        <div style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)">
-          <Button class="w-fit" href={getLocalePath('/download')} isPrimary>
-            {hero.buttons.beta}
-            <ArrowRightIcon class="size-4" />
-          </Button>
-        </div>
-        <div style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)">
-          <Button class="w-fit" href={getLocalePath('/donate')}>
-            {hero.buttons.support}
-          </Button>
-        </div>
+        <a
+          class="hero-chip hero-chip--secondary text-dark/75 flex w-full items-center justify-center rounded-xl border border-white/30 bg-paper px-6 py-4 text-sm font-semibold transition-transform duration-150 hover:scale-[1.02] active:scale-[0.98] md:w-fit"
+          href="#services"
+        >
+          {hero.buttons.support}
+        </a>
       </div>
     </div>
-    <SocialMediaStrip style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)" />
   </div>
-  <Video
-    name="hero-video"
-    autoplay
-    loop
-    muted
-    playsinline
-    preload="none"
-    class="rounded-xl"
-    style="transform: translateY(20px); opacity: 0.001; filter: blur(4px); transform-origin: top;"
-  />
 </header>
 
+<section
+  id="healing-space"
+  aria-label="Therapy session overview"
+  class="relative w-full pb-12 pt-10 sm:pb-16 sm:pt-14 lg:pb-24 lg:pt-20"
+>
+  <!-- Therapy treatment panels -->
+  <div
+    class="healing-panels relative mx-auto mt-2 grid w-full max-w-5xl grid-cols-[0.82fr_1fr] grid-rows-[auto_auto_auto] items-start gap-4 px-0 text-left sm:px-2 md:mt-4 md:grid-cols-[0.78fr_1fr_1.08fr] md:grid-rows-[auto_auto] md:items-start md:gap-5 lg:gap-6"
+    style="transform: translateY(20px); opacity: 0.001; filter: blur(4px)"
+  >
+    <div
+      class="order-1 col-start-2 row-start-1 self-end pl-1 md:col-span-2 md:col-start-2 md:row-start-1 md:self-end md:pl-1"
+    >
+      <p class="font-serif text-3xl italic leading-none sm:text-4xl md:text-5xl">Space to heal.</p>
+      <p class="text-dark/55 mt-2 max-w-xl text-xs leading-relaxed sm:text-sm">
+        Care that begins with listening, then works at the pace your body can accept.
+      </p>
+    </div>
+
+    <article
+      class="hero-panel order-2 col-start-1 row-span-2 row-start-1 overflow-hidden rounded-[1.75rem] bg-cream/55 p-3 md:col-start-1 md:row-span-2 md:row-start-1 md:self-start"
+    >
+      <div
+        class="via-paper/70 relative aspect-[4/3] overflow-hidden rounded-[1.35rem] bg-gradient-to-br from-coral/25 to-olive/20 md:aspect-[1.04/1]"
+      >
+        <svg
+          aria-hidden="true"
+          class="absolute inset-0 h-full w-full text-olive/25"
+          viewBox="0 0 800 500"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1"
+        >
+          <path d="M120 420 C 200 320, 280 240, 420 180"></path>
+          <path d="M180 380 C 230 360, 280 340, 320 310"></path>
+          <path d="M520 100 C 580 140, 620 200, 640 280"></path>
+          <path d="M560 140 C 590 180, 610 220, 620 260"></path>
+        </svg>
+        <p
+          class="text-dark/80 absolute bottom-4 left-4 max-w-[9rem] font-serif text-lg italic sm:text-2xl"
+        >
+          “Your body whispers before it screams.”
+        </p>
+      </div>
+      <div class="flex items-end justify-between gap-4 px-2 pb-1 pt-4">
+        <div>
+          <p class="font-serif text-lg leading-tight sm:text-xl lg:text-2xl">
+            Inside a therapy session
+          </p>
+          <p class="text-dark/60 mt-1 text-xs leading-relaxed sm:text-sm">
+            Slow assessment, careful pressure, and time to notice what changed.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <article
+      class="hero-panel hero-panel--price relative order-3 col-start-2 row-start-2 min-h-[10.5rem] overflow-hidden bg-coral p-4 text-white sm:min-h-[12rem] sm:p-6 md:col-start-2 md:row-start-2 md:min-h-[16rem] md:p-7 lg:min-h-[17.5rem]"
+    >
+      <img
+        src="/price-card-gradient.webp"
+        alt=""
+        aria-hidden="true"
+        class="absolute inset-0 h-full w-full scale-110 object-cover brightness-[1.04] contrast-[1.18] saturate-[1.55]"
+        loading="eager"
+        decoding="async"
+      />
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 bg-gradient-to-br from-coral/80 via-[#f36f5f]/55 to-[#ec4f67]/70 mix-blend-multiply"
+      >
+      </div>
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 bg-[radial-gradient(circle_at_25%_18%,rgba(255,255,255,0.42),transparent_30%),radial-gradient(circle_at_78%_18%,rgba(255,186,120,0.35),transparent_34%)]"
+      >
+      </div>
+      <div class="relative z-10 flex h-full flex-col items-center justify-center text-center">
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-white/75 sm:text-sm">
+          Starting at
+        </p>
+        <p class="mt-2 font-serif text-4xl leading-none sm:text-5xl md:mt-3 md:text-6xl">$12,000</p>
+      </div>
+    </article>
+
+    <article
+      class="hero-panel relative order-4 col-span-2 row-start-3 min-h-[13rem] overflow-hidden bg-cream/70 md:col-span-1 md:col-start-3 md:row-start-2 md:min-h-[16rem] lg:min-h-[17.5rem]"
+    >
+      <img
+        src="/relaxed-client-cutout.png"
+        alt="Relaxed massage client seated in a calm therapy studio"
+        class="absolute bottom-0 right-0 h-[84%] w-[54%] object-contain object-bottom opacity-100 md:h-[84%] md:w-[52%] lg:h-[82%] lg:w-[50%]"
+        loading="eager"
+        decoding="async"
+      />
+      <a
+        href={whatsappHref}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Book a session on WhatsApp"
+        class="absolute right-5 top-5 z-20 flex size-10 shrink-0 cursor-pointer items-center justify-center rounded-full bg-paper"
+      >
+        ↗
+      </a>
+      <div
+        class="relative z-10 flex h-full flex-col justify-between gap-5 p-5 pr-[48%] sm:p-6 sm:pr-[48%]"
+      >
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <p class="font-serif text-2xl leading-tight">Client comfort</p>
+            <p class="text-dark/60 mt-2 text-xs leading-relaxed">
+              Care that helps the nervous system settle.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 gap-4">
+          <div>
+            <p class="font-serif text-3xl leading-none">12+</p>
+            <p class="text-dark/50 mt-1 text-[11px] uppercase tracking-[0.16em]">
+              Years in practice
+            </p>
+          </div>
+          <div>
+            <p class="font-serif text-3xl leading-none">50+</p>
+            <p class="text-dark/50 mt-1 text-[11px] uppercase tracking-[0.16em]">
+              Sessions delivered
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
 <script>
-  import { animate, onScroll, stagger } from 'animejs'
+  import { animate, cubicBezier, stagger } from 'animejs'
 
   function initAnimations() {
-    const debug = false
-
     const elements = document.querySelectorAll(
-      '#header h1 b, #header p, #header div:has(a), #header video, #header ul'
+      '#header h1 b, #header p, #header div:has(a), #header span, #healing-space .healing-panels'
     )
 
     animate(elements, {
-      // @ts-expect-error - element is HTMLElement
-      opacity: element => {
-        if (element.tagName === 'UL') {
-          return { from: 0.001, to: 0.8 }
-        }
-        return { from: 0.001, to: 1 }
-      },
+      opacity: { from: 0.001, to: 1 },
       translateY: { from: 20, to: 0 },
       filter: { from: 'blur(4px)', to: 'blur(0px)' },
-      duration: 300,
-      delay: stagger(150),
-      ease: 'cubicBezier(0.25, 0.1, 0.25, 1)',
-      autoplay: onScroll({
-        target: '#header',
-        debug,
-      }),
+      duration: 400,
+      delay: stagger(120),
+      ease: cubicBezier(0.25, 0.1, 0.25, 1),
     })
   }
   initAnimations()
 </script>
+
+<style>
+  .hero-chip {
+    overflow: hidden;
+    background-image:
+      linear-gradient(145deg, rgb(255 255 255 / 0.14), transparent 42%),
+      linear-gradient(180deg, rgb(255 255 255 / 0.08), rgb(0 0 0 / 0.08));
+    box-shadow:
+      0 0 0 5px rgb(255 255 255 / 0.08),
+      0 12px 18px color-mix(in srgb, var(--zen-dark) 14%, transparent),
+      0 2px 4px color-mix(in srgb, var(--zen-dark) 10%, transparent),
+      inset 0 1px 0 rgb(255 255 255 / 0.28),
+      inset 0 -2px 4px rgb(0 0 0 / 0.1);
+  }
+
+  .hero-chip--secondary {
+    box-shadow:
+      0 0 0 5px rgb(255 255 255 / 0.08),
+      0 10px 16px color-mix(in srgb, var(--zen-dark) 10%, transparent),
+      0 2px 4px color-mix(in srgb, var(--zen-dark) 8%, transparent),
+      inset 0 1px 0 rgb(255 255 255 / 0.34),
+      inset 0 -2px 4px rgb(0 0 0 / 0.06);
+  }
+
+  .hero-panel {
+    border-radius: 1.75rem;
+    box-shadow: 0 1px 2px color-mix(in srgb, var(--zen-dark) 8%, transparent);
+  }
+</style>
