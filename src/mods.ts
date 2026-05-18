@@ -49,7 +49,7 @@ const SERVICES: WellnessService[] = [
   {
     name: 'Aromatherapy',
     description: 'A restorative session using calming aroma blends alongside gentle bodywork.',
-    image: '/treatments/treatment-breath.png',
+    image: '/treatments/treatment-aromatherapy.png',
     downloadUrl: '/download',
     id: 'aromatherapy',
     readme: '',
@@ -77,7 +77,7 @@ const SERVICES: WellnessService[] = [
   {
     name: 'Stone Massage',
     description: 'Warm stones and steady pressure help soften guarded muscles and deepen rest.',
-    image: '/treatments/treatment-hands.png',
+    image: '/treatments/treatment-stone-massage.png',
     downloadUrl: '/download',
     id: 'stone-massage',
     readme: '',
@@ -134,7 +134,7 @@ const SERVICES: WellnessService[] = [
     name: 'Hydro Therapy',
     description:
       'Water-based heat and recovery work for circulation, mobility, and post-treatment ease.',
-    image: '/treatments/treatment-mobility.png',
+    image: '/treatments/treatment-hydro-therapy.png',
     downloadUrl: '/download',
     id: 'hydro-therapy',
     readme: '',
