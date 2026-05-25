@@ -119,10 +119,24 @@ const {
       class="grid w-full grid-cols-[1fr_auto] items-center gap-2"
       aria-label="Copyright information"
     >
-      <p
-        class="flex justify-center gap-2 lg:justify-start"
-        set:html={footer.madeWith.replace('{link}', getLocalePath('/about'))}
-      />
+      <p class="flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+        <span>Made with care from</span>
+        <a
+          href="https://instantprod.dev"
+          class="instantprod-credit inline-flex items-center transition-opacity hover:opacity-80"
+          aria-label="Instantprod"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/instantprod-white.svg"
+            alt="Instantprod"
+            class="h-5 w-auto"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      </p>
     </section>
     <section
       class="pointer-events-none absolute bottom-0 right-0 hidden lg:block"

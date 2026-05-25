@@ -4,6 +4,7 @@ import Features from '~/components/Features.astro'
 import Hero from '~/components/Hero.astro'
 import MotionEnhancer from '~/components/MotionEnhancer'
 import Pricing from '~/components/Pricing.astro'
+import Subscription from '~/components/Subscription.astro'
 import Therapist from '~/components/Therapists.astro'
 import Layout from '~/layouts/Layout.astro'
 import { getLocale, getUI } from '~/utils/i18n'
@@ -21,6 +22,7 @@ const { layout } = getUI(locale)
     <Community />
     <Therapist />
     <Pricing />
+    <Subscription />
   </main>
   <MotionEnhancer client:idle />
 </Layout>
